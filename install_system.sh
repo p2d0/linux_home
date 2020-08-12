@@ -12,7 +12,7 @@ fi
 # Install packages
 yay -Sy dmenu spotify telegram-desktop ttf-font-awesome bumblebee-status feh redshift emacs  \
     i3lock guake gnome-terminal gnome-disk-utility picom polkit-gnome flameshot pasystray pulseaudio \
-    pulseaudio-bluetooth albert breeze breeze-gtk panther-launcher-git
+    pulseaudio-bluetooth albert breeze breeze-gtk panther-launcher-git fcitx fcitx-mozc
 
 #Install zsh
 if [ command -v zsh &> /dev/null ]
@@ -34,6 +34,7 @@ if [ ! -d "/home/$name" ]
 then
    mkdir home_dir
 fi
+
 
 if [ ! -d "$home_dir/.doom.d" ]
 then
