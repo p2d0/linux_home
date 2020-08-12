@@ -23,7 +23,10 @@ then
 fi
 
 #Add gpg key
-sudo sh -c "echo 'keyserver hkp://keys.gnupg.net' >> /etc/pacman.d/gnupg/gpg.conf"
+if ! cat /etc/pacman.d/gnupg/gpg.conf | grep hkp://keys.gnupg
+then
+    sudo sh -c "echo 'keyserver hkp://keys.gnupg.net' >> /etc/pacman.d/gnupg/gpg.conf"
+fi
 
 read -p "User home directory name:" name
 home_dir="/home/$name"

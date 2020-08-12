@@ -7,3 +7,5 @@
 !.config/i3
 !.config/picom
 !.zshrc
+!.config/qt5ct
+!.config/gtk-3.0
