@@ -11,14 +11,13 @@ fi
 
 # Install packages
 yay -Sy dmenu spotify telegram-desktop ttf-font-awesome bumblebee-status feh redshift emacs  \
-    i3lock guake gnome-terminal gnome-disks picom polkit-gnome flameshot pasystray pulseaudio \
-    pulseaudio-bluetooth albert breeze breeze-gtk panther-launcher-git
+    i3lock guake gnome-terminal gnome-disk-utility picom polkit-gnome flameshot pasystray pulseaudio \
+    pulseaudio-bluetooth albert breeze breeze-gtk panther-launcher-git \
 
 #Install zsh
 if [ command -v zsh &> /dev/null ]
 then
     yay -Sy zsh
-    zsh
     chsh -s /bin/zsh
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
