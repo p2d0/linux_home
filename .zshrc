@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/admin/.oh-my-zsh"
+export ZSH="~/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -137,8 +137,8 @@ if [ -d "/opt/toolchains/arm-eabi-4.6/bin" ] ; then
 fi
 
 alias python=python2
-export PATH="$PATH:/home/admin/.dotnet/tools"
-export PATH="$PATH:/home/admin/.emacs.d/bin"
+export PATH="$PATH:~/.dotnet/tools"
+export PATH="$PATH:~/.emacs.d/bin"
 alias rf="gnome-terminal --role=ranger -x ranger"
 export VISUAL="emacsclient -n"
 export PAGER=more
