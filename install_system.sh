@@ -12,7 +12,7 @@ fi
 # Install packages
 yay -Sy dmenu spotify telegram-desktop ttf-font-awesome bumblebee-status feh redshift emacs  \
     i3lock guake gnome-terminal gnome-disk-utility picom polkit-gnome flameshot pasystray pulseaudio \
-    pulseaudio-bluetooth albert breeze breeze-gtk panther-launcher-git \
+    pulseaudio-bluetooth albert breeze breeze-gtk panther-launcher-git
 
 #Install zsh
 if [ command -v zsh &> /dev/null ]
@@ -22,8 +22,8 @@ then
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
 
-
-#Install emacs
+#Add gpg key
+sudo sh -c "echo 'keyserver hkp://keys.gnupg.net' >> /etc/pacman.d/gnupg/gpg.conf"
 
 read -p "User home directory name:" name
 home_dir="/home/$name"
