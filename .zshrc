@@ -140,3 +140,5 @@ export PATH="$PATH:~/.emacs.d/bin"
 alias rf="gnome-terminal --role=ranger -x ranger"
 export VISUAL="emacsclient -n"
 export PAGER=more
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
