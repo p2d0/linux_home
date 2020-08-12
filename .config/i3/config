@@ -235,13 +235,13 @@ exec pasystray
 exec_always feh --bg-fill ~/.config/i3/bg/11-1.jpg
 
 #redshift night light
-exec_always redshift
+exec redshift
 
 #Guake
 exec --no-startup-id guake
 
 #Language switch
-exec --no-startup-id setxkbmap us,ru -option 'grp:alt_shift_toggle'
+# exec --no-startup-id setxkbmap us,ru -option 'grp:alt_shift_toggle'
 
 # Mouse acceleration
 # Find mouse automatically
@@ -307,3 +307,5 @@ font pango:Inconsolata 10
         # status_command bumblebee-status -m datetime nic battery \
 		# pasink pasource -p datetime.format=" %H:%M, %A, %d, %b %Y " -t solarized
 }
+
+exec ibus-daemon --xim
