@@ -12,7 +12,8 @@ fi
 # Install packages
 yay -Sy dmenu spotify telegram-desktop ttf-font-awesome bumblebee-status feh redshift emacs  \
     i3lock guake gnome-terminal gnome-disk-utility picom polkit-gnome flameshot pasystray pulseaudio \
-    pulseaudio-bluetooth albert breeze breeze-gtk panther-launcher-git fcitx fcitx-mozc
+    pulseaudio-bluetooth albert breeze breeze-gtk panther-launcher-git fcitx fcitx-mozc \
+    i3-gaps lightdm-webkit2-greeter
 
 #Install zsh
 if [ command -v zsh &> /dev/null ]

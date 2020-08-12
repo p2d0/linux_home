@@ -10,4 +10,7 @@
 !.config/qt5ct
 !.config/gtk-3.0
 !.config/albert
+!.config/fcitx
+.config/fcitx/*
+!.config/fcitx/profile
 !.profile
