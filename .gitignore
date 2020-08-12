@@ -1,9 +1,7 @@
-.DS_Store
-.idea
-*.log
-tmp/
 *
-!i3/
-!i3/*/
-!install.sh
-!.gitignore
+!.config
+!.config/
+!.config/**
+.config/*
+!.config/i3
+!.config/picom
