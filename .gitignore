@@ -6,3 +6,4 @@
 .config/*
 !.config/i3
 !.config/picom
+!.zshrc
