@@ -1,6 +1,8 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+
+
 # Path to your oh-my-zsh installation.
 export ZSH="/home/$USER/.oh-my-zsh"
 
@@ -143,3 +145,13 @@ export PAGER=more
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
+# Import colorscheme from 'wal' asynchronously
+# &   # Run the process in the background.
+# ( ) # Hide shell job control messages.
+(cat ~/.cache/wal/sequences &)
+
+# Alternative (blocks terminal for 0-3ms)
+cat ~/.cache/wal/sequences
+
+# To add support for TTYs this line can be optionally added.
+source ~/.cache/wal/colors-tty.sh
