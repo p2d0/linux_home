@@ -81,6 +81,7 @@ bindsym $mod+Shift+Return exec gnome-terminal --role=ranger -x ranger
 # kill focused window
 bindsym $mod+x kill
 
+
 #mouse jump
 # mouse_warping none
 focus_follows_mouse no
@@ -203,7 +204,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 # bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
-bindsym $mod+Shift+e exec "echo -e '\nexit' | dmenu -i -p 'New name for this workspace:' || i3-msg $1"
+bindsym $mod+Shift+e exec ~/.config/i3/exit.sh
 # bindsym $mod+n exec i3-input -F 'rename workspace to "%s"' -P 'New name for this workspace: '
 bindsym $mod+n exec ~/.config/i3/rename_workspace.sh
 
@@ -240,8 +241,8 @@ exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec pasystray
 
 #Bg
-# exec_always feh --bg-fill ~/.config/i3/bg/1.jpg
-exec_always wal -i ~/.config/i3/bg/11-0-Day.jpg
+exec_always feh --bg-fill ~/.config/i3/bg/11-0-Day.jpg
+exec_always wal -i ~/.config/i3/bg/11-0-Day.jpg -n
 
 #redshift night light
 exec --no-startup-id redshift-gtk
