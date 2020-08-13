@@ -309,4 +309,5 @@ font pango:Inconsolata 10
 		# pasink pasource -p datetime.format=" %H:%M, %A, %d, %b %Y " -t solarized
 }
 
+exec --no-startup-id dunst
 exec --no-startup-id fcitx -d

@@ -12,8 +12,8 @@ fi
 # Install packages
 yay -Sy dmenu spotify telegram-desktop ttf-font-awesome bumblebee-status feh redshift emacs  \
     i3lock guake gnome-terminal gnome-disk-utility picom polkit-gnome flameshot pasystray pulseaudio \
-    pulseaudio-bluetooth albert breeze breeze-gtk panther-launcher-git fcitx fcitx-mozc \
-    i3-gaps lightdm-webkit2-greeter
+    pulseaudio-bluetooth albert breeze breeze-gtk panther-launcher-git fcitx fcitx-mozc fcitx-qt5 \
+    i3-gaps lightdm-webkit2-greeter lightdm-webkit-theme-sequoia-git dunst
 
 #Install zsh
 if [ command -v zsh &> /dev/null ]
@@ -36,7 +36,19 @@ then
    mkdir home_dir
 fi
 
+# Install lightdm webkit greeter
+if ! cat /etc/lightdm/lightdm.conf | grep lightdm-webkit2-greeter
+then
+    sudo sed -i '/^\[Seat:/a greeter-session = lightdm-webkit2-greeter' /etc/lightdm/lightdm.conf
+fi
 
+# Install Webkit greeter theme
+if ! cat /etc/lightdm/lightdm-webkit2-greeter.conf | grep sequoia
+then
+   sudo sed 's/webkit_theme\s=.*/webkit_theme = sequoia/g' /etc/lightdm/lightdm-webkit2-greeter.conf
+fi
+
+#Install DOOM Emacs
 if [ ! -d "$home_dir/.doom.d" ]
 then
     git clone --depth 1 https://github.com/hlissner/doom-emacs $home_dir/.emacs.d
@@ -44,4 +56,3 @@ then
     $home_dir/.emacs.d/bin/doom install
 fi
 
-# Set qt & gtk theme

@@ -10,7 +10,9 @@
 !.config/qt5ct
 !.config/gtk-3.0
 !.config/albert
+.config/albert/*.db
 !.config/fcitx
 .config/fcitx/*
-!.config/fcitx/profile
+!.config/fcitx/config
 !.profile
+!.config/dunst
