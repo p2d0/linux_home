@@ -15,24 +15,15 @@ exec_always picom --experimental-backends --config ~/.config/picom/picom.conf -b
 set $mod Mod4
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-default_border pixel 4
+default_border none
 default_floating_border normal
 
 # Hide borders
-hide_edge_borders smart
+# hide_edge_borders smart
 
 # xprop
 # #---Dropdown Windows---# #
 # General dropdown window traits. The order can matter.
-for_window [instance="dropdown_*"] floating enable
-for_window [instance="dropdown_*"] move scratchpad
-for_window [instance="dropdown_*"] sticky enable
-for_window [instance="dropdown_*"] scratchpad show
-for_window [instance="dropdown_tmuxdd"] resize set 625 450
-for_window [instance="dropdown_dropdowncalc"] resize set 800 300
-for_window [instance="dropdown_tmuxdd"] border pixel 3
-for_window [instance="dropdown_dropdowncalc"] border pixel 2
-for_window [instance="dropdown_*"] move position center
 for_window [instance="gnome-[^t].+"] floating enable
 for_window [instance="guake"] floating enable
 for_window [window_role="ranger"] floating enable
@@ -144,7 +135,7 @@ set $ws3 "3"
 set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
-set $ws7 "7: Telegram"
+set $ws7 "7"
 set $ws8 "8: Discord"
 set $ws9 "9: Other stuff Monitor2"
 set $ws10 "10: Spotify and Telegram"
@@ -194,8 +185,8 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
-
+# bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "echo -e '\nexit' | dmenu -i -p 'New name for this workspace:' || i3-msg $1"
 # bindsym $mod+n exec i3-input -F 'rename workspace to "%s"' -P 'New name for this workspace: '
 bindsym $mod+n exec ~/.config/i3/rename_workspace.sh
 
@@ -224,7 +215,6 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 
-# client.focused #ffffff #ffffff #ffffff #ffffff   #ffffff
 
 #Autoload
 #Auth agent
@@ -233,13 +223,14 @@ exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec pasystray
 
 #Bg
-exec_always feh --bg-fill ~/.config/i3/bg/11-1.jpg
+# exec_always feh --bg-fill ~/.config/i3/bg/1.jpg
+exec_always wal -i ~/.config/i3/bg/1.jpg
 
 #redshift night light
-exec redshift
+exec --no-startup-id redshift
 
 #Guake
-exec --no-startup-id guake
+exec_always  guake
 
 #Language switch
 exec --no-startup-id setxkbmap us,ru -option 'grp:alt_shift_toggle'
@@ -262,7 +253,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 for_window [class="Spotify"] move to workspace $ws10
-assign [class="TelegramDesktop"] $ws7
+assign [class="TelegramDesktop"] $ws10
 assign [class="discord"] $ws8
 
 #Dont forget to install these for them to work
@@ -277,15 +268,6 @@ bindsym $mod+m exec panther_launcher
 # Switch between 1 & 2 workspaces
 bindsym $mod+r mode "resize"
 
-set $B='#00000000'  # blank
-set $C='#ffffff22'  # clear ish
-set $D='#ff00ffcc'  # default
-set $text="#ee00eeee"  # text
-set $W='#880000bb'  # wrong
-set $V='#bb00bbbb'  # verifying
-
-# bindsym $mod+Shift+l exec i3lock   --screen 1 --blur 5 --clock --indicator --timestr="%H:%M:%S" --datestr="%A %m %Y" --timecolor=$text --datecolor=$text # & sleep 1 && xset dpms force off
-# $
 bindsym $mod+Shift+l exec ~/.config/i3/lock.sh
 
 
@@ -293,6 +275,7 @@ bindsym $mod+Shift+l exec ~/.config/i3/lock.sh
 
 # switch to workspace with urgent window automatically
 # for_window [urgent=latest] focus
+# focus_on_window_activation focus
 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -309,5 +292,6 @@ font pango:Inconsolata 10
 		# pasink pasource -p datetime.format=" %H:%M, %A, %d, %b %Y " -t solarized
 }
 
+
 exec --no-startup-id dunst
-exec --no-startup-id fcitx -d
+exec_always --no-startup-id fcitx -d
