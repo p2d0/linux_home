@@ -7,12 +7,13 @@ T='#ee00eeee'  # text
 W='#880000bb'  # wrong
 V='#bb00bbbb'  # verifying
 White='#ffffffff'
+Black='#000000FF'
 
 i3lock \
 --timecolor=$White        \
 --datecolor=$White        \
 --screen 1            \
---blur 5              \
+--color $Black             \
 --clock               \
 --indicator           \
 --timestr="%H:%M:%S"  \

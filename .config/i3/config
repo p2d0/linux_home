@@ -10,17 +10,6 @@
 # from the generated scheme.
 # NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
 # it fails to get colors from Xresources.
-set_from_resource $fg i3wm.color7 #f0f0f0
-set_from_resource $bg i3wm.color2 #f0f0f0
-
-# class                 border  backgr. text indicator child_border
-client.focused          $bg     $bg     $fg  $bg       $bg
-client.focused_inactive $bg     $bg     $fg  $bg       $bg
-client.unfocused        $bg     $bg     $fg  $bg       $bg
-client.urgent           $bg     $bg     $fg  $bg       $bg
-client.placeholder      $bg     $bg     $fg  $bg       $bg
-
-client.background       $bg
 
 # i3 config file (v4)
 #
@@ -32,11 +21,11 @@ exec_always picom --experimental-backends --config ~/.config/picom/picom.conf -b
 set $mod Mod4
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-default_border none
+default_border pixel 5
 default_floating_border normal
 
 # Hide borders
-# hide_edge_borders smart
+hide_edge_borders smart
 
 # xprop
 # #---Dropdown Windows---# #
@@ -242,7 +231,7 @@ exec pasystray
 
 #Bg
 exec_always feh --bg-fill ~/.config/i3/bg/11-0-Day.jpg
-exec_always wal -i ~/.config/i3/bg/11-0-Day.jpg -n
+# exec_always wal -i ~/.config/i3/bg/11-0-Day.jpg -n
 
 #redshift night light
 exec --no-startup-id redshift-gtk
