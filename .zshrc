@@ -106,21 +106,35 @@ source $ZSH/oh-my-zsh.sh
 
 favoka=u0504861@favoka.art
 climbtech=u0673162@climbtech.ru
+
 favoka_mount=$favoka:/var/www/u0504861/data
 alias mount_favoka="sshfs $favoka_mount ~/favoka-prod"
 
 export VISUAL="emacsclient"
 export EDITOR="$VISUAL"
+
+# | clip
 alias clip="xclip -sel clip"
+
 h265(){
-    echo ffmpeg -i $file -c:v libx265 -c:a copy $out
-    ffmpeg -i "$1" -c:v libx265 -c:a copy "$2"
+    case $1 in
+        "-h" | "")
+            echo "h265 \$1 File input \$2 output";;
+        *)
+            echo ffmpeg -i $file -c:v libx265 -c:a copy $out
+            ffmpeg -i "$1" -c:v libx265 -c:a copy "$2";;
+    esac
 }
 
 vapi(){
-    ffmpeg -i "$1" -c:v libvpx-vp9 -pass 2 -b:v 1000K -threads 8 -speed 1 \
-           -tile-columns 6 -frame-parallel 1 -auto-alt-ref 1 -lag-in-frames 25 \
-           -c:a libopus -b:a 64k -f webm "$2"
+    case $1 in
+        -h | "")
+            echo "vapi\n\$1\tFile name\n\$2\toutput";;
+        *)
+            ffmpeg -i "$1" -c:v libvpx-vp9 -pass 2 -b:v 1000K -threads 8 -speed 1 \
+                -tile-columns 6 -frame-parallel 1 -auto-alt-ref 1 -lag-in-frames 25 \
+                -c:a libopus -b:a 64k -f webm "$2";;
+    esac
 }
 
 export USE_CCACHE=1
@@ -147,3 +161,5 @@ export LANG=en_US.UTF-8
 
 # EmacsClient -n shortcut
 alias em="emacsclient -n"
+
+alias list-packages='expac -H M "%011m\t%-20n\t%10d" $(comm -23 <(yay -Qqen | sort) <({ yay -Qqe; expac -l "\n" "%E" base; } | sort | uniq)) | sort -n | less'
