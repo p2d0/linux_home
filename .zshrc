@@ -151,8 +151,9 @@ if [ -d "/opt/toolchains/arm-eabi-4.6/bin" ] ; then
 fi
 
 alias python=python2
-export PATH="$PATH:~/.dotnet/tools"
-export PATH="$PATH:~/.emacs.d/bin"
+export PATH="$PATH:/home/$USER/.dotnet/tools"
+export PATH="$PATH:/home/$USER/.emacs.d/bin"
+export PATH="$PATH:/home/$USER/.local/bin"
 alias rf="gnome-terminal --role=ranger -x ranger"
 export VISUAL="emacsclient -n"
 export PAGER=more
