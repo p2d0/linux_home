@@ -56,7 +56,7 @@ webkit2-greeter-setup(){
 webkit-theme(){
     if ! cat /etc/lightdm/lightdm-webkit2-greeter.conf | grep sequoia
     then
-        sudo sed -i 's/webkit_theme\s=.*/webkit_theme = sequoia/g' /etc/lightdm/lightdm-webkit2-greeter.conf
+        sudo sed -i 's/webkit_theme\s=.*/webkit_theme = sequoia/g' /etc/lightdm/lightdm-webkit2-greeter.conf # TODO doesnt work
     fi
 }
 
