@@ -16,7 +16,7 @@ packages(){
         i3lock guake gnome-terminal gnome-disk-utility picom polkit-gnome flameshot pasystray pulseaudio \
         pulseaudio-bluetooth albert breeze breeze-gtk panther-launcher-git fcitx fcitx-mozc fcitx-qt5 \
         i3-gaps lightdm-webkit2-greeter lightdm-webkit-theme-sequoia-git dunst python-pywal i3lock-color \
-        qt5ct lxappearance
+        qt5ct lxappearance gimp
 }
 
 #Install zsh
@@ -71,10 +71,13 @@ doom_setup(){
 }
 
 case $1 in
+    "-h" | "help" | "")
+        echo "Arguments:\ninstall\nwebkit-theme\npackages\n";;
     webkit-theme)
-        webkit-theme
-        ;;
-    *)
+        webkit-theme;;
+    packages)
+        packages;;
+    install)
         packages
         gpg
         webkit2-greeter-setup
