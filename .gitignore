@@ -16,3 +16,7 @@
 !.config/fcitx/config
 !.profile
 !.config/dunst
+!.config/GIMP/
+!.config/GIMP/2.10
+.config/GIMP/2.10/*
+!.config/GIMP/2.10/menurc
