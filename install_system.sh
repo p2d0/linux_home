@@ -9,6 +9,8 @@ then
     makepkg -si
 fi
 
+home_dir=/home/$USER
+
 # Install packages
 
 packages(){
@@ -34,15 +36,6 @@ gpg(){
     if ! cat /etc/pacman.d/gnupg/gpg.conf | grep hkp://keys.gnupg
     then
         sudo sh -c "echo 'keyserver hkp://keys.gnupg.net' >> /etc/pacman.d/gnupg/gpg.conf"
-    fi
-}
-
-set_home_dir(){
-    read -p "User home directory name:" name
-    home_dir="/home/$name"
-    if [ ! -d "/home/$name" ]
-    then
-        mkdir home_dir
     fi
 }
 
@@ -72,6 +65,12 @@ doom_setup(){
     fi
 }
 
+docker_setup(){
+    sudo systemctl enable docker.service
+    sudo systemctl start docker.service
+    sudo usermod -aG docker $USER
+}
+
 case $1 in
     "-h" | "help" | "")
         echo "Arguments:\ninstall\nwebkit-theme\npackages\n";;
@@ -86,5 +85,6 @@ case $1 in
         webkit2-greeter-setup
         webkit-theme
         doom_setup
+        docker_setup
         ;;
 esac
