@@ -37,12 +37,14 @@ gpg(){
     fi
 }
 
-read -p "User home directory name:" name
-home_dir="/home/$name"
-if [ ! -d "/home/$name" ]
-then
-   mkdir home_dir
-fi
+set_home_dir(){
+    read -p "User home directory name:" name
+    home_dir="/home/$name"
+    if [ ! -d "/home/$name" ]
+    then
+        mkdir home_dir
+    fi
+}
 
 # Install lightdm webkit greeter
 webkit2-greeter-setup(){
@@ -80,6 +82,7 @@ case $1 in
     install)
         packages
         gpg
+        set_home_dir
         webkit2-greeter-setup
         webkit-theme
         doom_setup
