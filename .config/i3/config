@@ -16,7 +16,7 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 #
 # Compton pimac
-exec_always picom --experimental-backends --config ~/.config/picom/picom.conf -b
+exec_always picom  --config ~/.config/picom/picom.conf -b
 
 set $mod Mod4
 
