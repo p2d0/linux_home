@@ -20,6 +20,7 @@ exec_always picom  --config ~/.config/picom/picom.conf -b
 
 set $mod Mod4
 
+
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
 default_border pixel 5
 default_floating_border normal
@@ -148,6 +149,7 @@ set $ws7 "7"
 set $ws8 "8: Discord"
 set $ws9 "9: Other stuff Monitor2"
 set $ws10 "10: Spotify and Telegram"
+set $notion "Notion"
 
 set $monitor_1 DisplayPort-0
 set $monitor_2 DVI-D-0
@@ -158,6 +160,7 @@ workspace $ws10 output $monitor_2
 workspace $ws9 output $monitor_2
 workspace $ws8 output $monitor_2
 workspace $ws7 output $monitor_2
+workspace $notion output $monitor_2
 
 
 # switch to workspace
@@ -171,6 +174,8 @@ bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
+bindsym $mod+slash workspace $notion
+
 #
 # Cycle through active workspaces
 bindsym Mod1+Tab workspace back_and_forth
@@ -188,6 +193,7 @@ bindsym $mod+Shift+7 move container to workspace number $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8; workspace $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9; workspace $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10; workspace $ws10
+bindsym $mod+Shift+slash move container to workspace $notion; workspace $notion
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -264,6 +270,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 for_window [class="Spotify"] move to workspace $ws10
 assign [class="TelegramDesktop"] $ws10
 assign [class="discord"] $ws8
+assign [class="Lotion"] $notion
 
 #Dont forget to install these for them to work
 # bindsym $mod+p exec --no-startup-id ulauncher
