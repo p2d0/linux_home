@@ -11,9 +11,7 @@ fi
 
 home_dir=/home/$USER
 
-# Install packages
-
-packages(){
+install_packages(){
     yay -Sy dmenu spotify telegram-desktop ttf-font-awesome bumblebee-status feh redshift emacs  \
         i3lock guake gnome-terminal gnome-disk-utility picom polkit-gnome flameshot pasystray pulseaudio \
         pulseaudio-bluetooth albert breeze breeze-gtk panther-launcher-git fcitx fcitx-mozc fcitx-qt5 \
@@ -21,8 +19,7 @@ packages(){
         qt5ct lxappearance gimp discord docker docker-compose
 }
 
-#Install zsh
-zsh(){
+install_zsh(){
     if [ command -v zsh &> /dev/null ]
     then
         yay -Sy zsh
@@ -31,32 +28,29 @@ zsh(){
     fi
 }
 
-#Add gpg key
-gpg(){
+
+add_gpg_key(){
     if ! cat /etc/pacman.d/gnupg/gpg.conf | grep hkp://keys.gnupg
     then
         sudo sh -c "echo 'keyserver hkp://keys.gnupg.net' >> /etc/pacman.d/gnupg/gpg.conf"
     fi
 }
 
-# Install lightdm webkit greeter
-webkit2-greeter-setup(){
+install_lightdm_webkit_greeter(){
     if ! cat /etc/lightdm/lightdm.conf | grep lightdm-webkit2-greeter
     then
         sudo sed -i '/^\[Seat:/a greeter-session = lightdm-webkit2-greeter' /etc/lightdm/lightdm.conf
     fi
 }
 
-# Install Webkit greeter theme
-webkit-theme(){
+install_webkit_theme(){
     if ! cat /etc/lightdm/lightdm-webkit2-greeter.conf | grep sequoia
     then
         sudo sed -i 's/webkit_theme\s=.*/webkit_theme = sequoia/g' /etc/lightdm/lightdm-webkit2-greeter.conf # TODO doesnt work
     fi
 }
 
-#Install DOOM Emacs
-doom_setup(){
+install_doom_emacs(){
     if [ ! -d "$home_dir/.doom.d" ]
     then
         git clone --depth 1 https://github.com/hlissner/doom-emacs $home_dir/.emacs.d
@@ -71,20 +65,26 @@ docker_setup(){
     sudo usermod -aG docker $USER
 }
 
+add_multilib(){
+    sudo sed -ie '92,93 s/^.//' /etc/pacman.conf
+}
+
 case $1 in
     "-h" | "help" | "")
         echo "Arguments:\ninstall\nwebkit-theme\npackages\n";;
-    webkit-theme)
-        webkit-theme;;
-    packages)
-        packages;;
+    install_webkit_theme)
+        install_webkit_theme;;
+    install_packages)
+        install_packages;;
     install)
-        packages
-        gpg
+        install_packages
+        add_gpg_key
+        install_zsh
         set_home_dir
-        webkit2-greeter-setup
-        webkit-theme
-        doom_setup
+        install_lightdm_webkit_greeter
+        install_webkit_theme
+        install_doom_emacs
         docker_setup
+        add_multilib
         ;;
 esac
