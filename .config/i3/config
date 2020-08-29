@@ -40,6 +40,7 @@ for_window [class="Panther_launcher"] floating enable
 for_window [class="Panther_launcher"] resize set 1000 500
 for_window [class="Panther_launcher"] move position center
 for_window [class="Steam"] floating enable
+for_window [class="qBittorrent"] floating enable
 
 
 # Font for window titles. Will also be used by the bar unless a different font
