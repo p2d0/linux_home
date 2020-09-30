@@ -16,7 +16,7 @@ install_packages(){
         i3lock guake gnome-terminal gnome-disk-utility picom polkit-gnome flameshot pasystray pulseaudio \
         pulseaudio-bluetooth albert breeze breeze-gtk panther-launcher-git fcitx fcitx-mozc fcitx-qt5 \
         i3-gaps lightdm-webkit2-greeter lightdm-webkit-theme-sequoia-git dunst python-pywal i3lock-color \
-        qt5ct lxappearance gimp discord docker docker-compose
+        qt5ct lxappearance gimp discord docker docker-compose fira-code xorg-server
 }
 
 install_zsh(){
@@ -33,6 +33,7 @@ add_gpg_key(){
     if ! cat /etc/pacman.d/gnupg/gpg.conf | grep hkp://keys.gnupg
     then
         sudo sh -c "echo 'keyserver hkp://keys.gnupg.net' >> /etc/pacman.d/gnupg/gpg.conf"
+	sudo cp /etc/pacman.d/gnupg/gpg.conf $home_dir/.gnupg/gpg.conf
     fi
 }
 
@@ -46,7 +47,7 @@ install_lightdm_webkit_greeter(){
 install_webkit_theme(){
     if ! cat /etc/lightdm/lightdm-webkit2-greeter.conf | grep sequoia
     then
-        sudo sed -i 's/webkit_theme\s=.*/webkit_theme = sequoia/g' /etc/lightdm/lightdm-webkit2-greeter.conf # TODO doesnt work
+        sudo sed -i 's/webkit_theme.*/webkit_theme = sequoia/g' /etc/lightdm/lightdm-webkit2-greeter.conf
     fi
 }
 
@@ -65,22 +66,29 @@ docker_setup(){
     sudo usermod -aG docker $USER
 }
 
+internet_fix(){
+    pacman -Sy dhcpcd;
+    sudo systemctl enable dhcpcd;
+    sudo systemctl start dhcpcd;
+}
+
 add_multilib(){
     sudo sed -ie '92,93 s/^.//' /etc/pacman.conf
 }
 
 case $1 in
     "-h" | "help" | "")
-        echo "Arguments:\ninstall\nwebkit-theme\npackages\n";;
+        echo -e "Arguments:\ninstall\nwebkit-theme\npackages\n";;
     install_webkit_theme)
         install_webkit_theme;;
     install_packages)
         install_packages;;
+    internet_fix)
+        internet_fix;;
     install)
         install_packages
         add_gpg_key
         install_zsh
-        set_home_dir
         install_lightdm_webkit_greeter
         install_webkit_theme
         install_doom_emacs
