@@ -75,7 +75,6 @@ plugins=(git
          command-not-found
          colorize
          composer z)
-
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -160,6 +159,7 @@ export PAGER=more
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
+ssh-add  "/home/$USER/.ssh/finfactory"
 # EmacsClient -n shortcut
 alias em="emacsclient -n"
 
