@@ -16,7 +16,8 @@ install_packages(){
         i3lock guake gnome-terminal gnome-disk-utility picom polkit-gnome flameshot pasystray pulseaudio \
         pulseaudio-bluetooth albert breeze breeze-gtk panther-launcher-git fcitx fcitx-mozc fcitx-qt5 \
         i3-gaps lightdm-webkit2-greeter lightdm-webkit-theme-sequoia-git dunst python-pywal i3lock-color \
-        qt5ct lxappearance gimp discord docker docker-compose fira-code xorg-server
+        qt5ct lxappearance gimp discord docker docker-compose fira-code xorg-server firefox ttf-droid-min \
+        xorg-xinput noto-fonts
 }
 
 install_zsh(){
@@ -76,15 +77,22 @@ add_multilib(){
     sudo sed -ie '92,93 s/^.//' /etc/pacman.conf
 }
 
+enable_caps_hjkl(){
+    sudo cp $home_dir/altgr_vim /usr/share/X11/xkb/symbols/altgr_vim
+    sudo sed -i '3 a include "altgr_vim(altgr-vim)"'  /usr/share/X11/xkb/symbols/us
+}
+
 case $1 in
     "-h" | "help" | "")
-        echo -e "Arguments:\ninstall\nwebkit-theme\npackages\n";;
+        echo -e "Arguments:\ninstall\nwebkit-theme\npackages\ninstall_zsh\ninternet_fix";;
     install_webkit_theme)
         install_webkit_theme;;
     install_packages)
         install_packages;;
     internet_fix)
         internet_fix;;
+    install_zsh)
+        install_zsh;;
     install)
         install_packages
         add_gpg_key
@@ -94,5 +102,6 @@ case $1 in
         install_doom_emacs
         docker_setup
         add_multilib
+        enable_caps_hjkl
         ;;
 esac
