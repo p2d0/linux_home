@@ -172,8 +172,8 @@ set $ws9 "9: Other stuff Monitor2"
 set $ws10 "10: Spotify and Telegram"
 set $notion "Notion"
 
-set $monitor_1 DP-1
-set $monitor_2 DVI-D-1
+set $monitor_1 DP-0
+set $monitor_2 DVI-D-0
 
 workspace $ws1 output $monitor_1
 workspace $ws2 output $monitor_1
