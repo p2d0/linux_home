@@ -72,6 +72,7 @@ ZSH_THEME="agnoster"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git
          adb
+         ssh-agent
          command-not-found
          colorize
          composer z)
