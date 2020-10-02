@@ -47,6 +47,7 @@ for_window [class="qBittorrent"] floating enable
 assign [class="TelegramDesktop"] $ws10
 assign [class="discord"] $ws8
 assign [class="Lotion"] $notion
+assign [class="whatsapp-nativefier-d40211"] $ws8
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -167,7 +168,7 @@ set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
-set $ws8 "8: Discord"
+set $ws8 "8: Whatsapp And Discord"
 set $ws9 "9: Other stuff Monitor2"
 set $ws10 "10: Spotify and Telegram"
 set $notion "Notion"
@@ -278,6 +279,7 @@ exec --no-startup-id xinput --set-prop 12 'libinput Accel Profile Enabled' 0, 1
 exec --no-startup-id xinput --set-prop 13 'libinput Accel Profile Enabled' 0, 1
 #Other
 exec spotify
+exec whatsapp-nativefier
 #launcher
 exec --no-startup-id albert
 
