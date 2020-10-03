@@ -17,7 +17,7 @@ install_packages(){
         pulseaudio-bluetooth albert breeze breeze-gtk panther-launcher-git fcitx fcitx-mozc fcitx-qt5 \
         i3-gaps lightdm-webkit2-greeter lightdm-webkit-theme-sequoia-git dunst python-pywal i3lock-color \
         qt5ct lxappearance gimp discord docker docker-compose fira-code xorg-server firefox ttf-droid-min \
-        xorg-xinput noto-fonts ntfs-3g openssh
+        xorg-xinput noto-fonts ntfs-3g openssh fcitx-configtool
 }
 
 install_zsh(){

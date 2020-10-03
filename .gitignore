@@ -21,3 +21,5 @@
 .config/GIMP/2.10/*
 !.config/GIMP/2.10/menurc
 !.config/fontconfig/
+!.pam_environment
+!.config/systemd/
