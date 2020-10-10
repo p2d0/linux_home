@@ -84,7 +84,7 @@ enable_caps_hjkl(){
 
 case $1 in
     "-h" | "help" | "")
-        echo -e "Arguments:\ninstall\nwebkit-theme\npackages\ninstall_zsh\ninternet_fix";;
+        echo -e "Arguments:\ninstall\nwebkit-theme\npackages\ninstall_zsh\ninternet_fix\nenable_caps_hjkl";;
     install_webkit_theme)
         install_webkit_theme;;
     install_packages)
@@ -93,6 +93,9 @@ case $1 in
         internet_fix;;
     install_zsh)
         install_zsh;;
+    enable_caps_hjkl)
+        enable_caps_hjkl
+        ;;
     install)
         install_packages
         add_gpg_key
