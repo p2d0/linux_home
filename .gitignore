@@ -23,3 +23,4 @@
 !.config/fontconfig/
 !.pam_environment
 !.config/systemd/
+!.config/redshift.conf
