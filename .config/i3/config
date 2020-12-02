@@ -70,7 +70,10 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s +10%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s 10%-
-
+bindsym XF86AudioPlay exec  --no-startup-id dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+bindsym XF86AudioPause exec  --no-startup-id dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Pause
+bindsym XF86AudioNext exec  --no-startup-id dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
+bindsym XF86AudioPrev exec  --no-startup-id dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
 #Dont forget to install these for them to work
 # bindsym $mod+p exec --no-startup-id ulauncher
 bindsym Print exec flameshot gui
@@ -261,8 +264,7 @@ exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec pasystray
 
 #Bg
-exec_always feh --bg-fill ~/.config/i3/bg/11-0-Day.jpg
-# exec_always wal -i ~/.config/i3/bg/11-0-Day.jpg -n
+exec_always feh --bg-fill ~/.config/i3/bg/bright.jpg
 
 #redshift night light
 exec --no-startup-id redshift-gtk
@@ -277,9 +279,9 @@ exec --no-startup-id setxkbmap us,ru -option 'grp:alt_shift_toggle'
 # Find mouse automatically
 exec --no-startup-id xinput --set-prop 12 'libinput Accel Profile Enabled' 0, 1
 exec --no-startup-id xinput --set-prop 13 'libinput Accel Profile Enabled' 0, 1
+exec --no-startup-id xinput --set-prop 18 'libinput Accel Profile Enabled' 0, 1
 #Other
-exec spotify
-exec whatsapp-nativefier
+exec env LD_PRELOAD=/usr/lib/spotify-adblock.so spotify %U
 #launcher
 exec --no-startup-id albert
 
@@ -308,12 +310,12 @@ exec_always --no-startup-id fcitx -d
 #
 bar {
 # output $monitor_1
-font pango:Inconsolata 10
+font pango:DroidSansMono 9
         # tray_output none
 	status_command bumblebee-status -m time nic \
-		battery layout  pasink pasource \
+		battery layout bluetooth2 pasink pasource \
 		-p root.path=/ time.format=" %H:%M, %A, %d, %b %Y " date.format="%a, %b %d %Y" \
-		-t nord-powerline
+		-t iceberg
         # status_command bumblebee-status -m datetime nic battery \
 		# pasink pasource -p datetime.format=" %H:%M, %A, %d, %b %Y " -t solarized
 }
