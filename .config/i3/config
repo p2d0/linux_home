@@ -315,7 +315,7 @@ font pango:DroidSansMono 9
 	status_command bumblebee-status -m time nic \
 		battery layout bluetooth2 pasink pasource \
 		-p root.path=/ time.format=" %H:%M, %A, %d, %b %Y " date.format="%a, %b %d %Y" \
-		-t iceberg
+		-t nord-powerline
         # status_command bumblebee-status -m datetime nic battery \
 		# pasink pasource -p datetime.format=" %H:%M, %A, %d, %b %Y " -t solarized
 }

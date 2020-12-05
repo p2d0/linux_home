@@ -162,7 +162,10 @@ export LANG=en_US.UTF-8
 ssh-add  "/home/$USER/.ssh/finfactory"
 # EmacsClient -n shortcut
 alias em="emacsclient -n"
-
+alias dotnet-test="dotnet test"
+alias dotnet-test-debug="VSTEST_HOST_DEBUG=1 dotnet test"
+alias dotnet-waza="dotnet exec /usr/share/dotnet/sdk/3.1.108/vstest.console.dll --testAdapterPath:/mnt/Home/nuget/coverlet.collector/1.2.0/build/netstandard1.0/ --framework:.NETCoreApp,Version=v2.1 /mnt/Home/AlexeyTema/ff_back-master/src/FinFactory.Api.Test/bin/Debug/netcoreapp2.1/FinFactory.Api.Test.dll"
+alias dotnet-vstest="dotnet exec /usr/share/dotnet/sdk/3.1.108/vstest.console.dll"
 alias list-packages='expac -H M "%011m\t%-20n\t%10d" $(comm -23 <(yay -Qqen | sort) <({ yay -Qqe; expac -l "\n" "%E" base; } | sort | uniq)) | sort -n | less'
 if [ -d "/mnt/Home/nuget" ]; then
    export NUGET_PACKAGES="/mnt/Home/nuget"
