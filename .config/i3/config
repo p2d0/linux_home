@@ -41,21 +41,21 @@ for_window [class="Panther_launcher"] floating enable
 for_window [class="Panther_launcher"] resize set 1000 500
 for_window [class="Panther_launcher"] move position center
 for_window [class="Steam"] floating enable
-for_window [class="qBittorrent"] floating enable
 
 
 assign [class="TelegramDesktop"] $ws10
 assign [class="discord"] $ws8
 assign [class="Lotion"] $notion
 assign [class="whatsapp-nativefier-d40211"] $ws8
+assign [class="qBittorrent"] $ws8
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+# font pango:monospace 8
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
+font pango:DejaVu Sans Mono 8
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -171,8 +171,8 @@ set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
-set $ws8 "8: Whatsapp And Discord"
-set $ws9 "9: Other stuff Monitor2"
+set $ws8 "8: Movies and stuff"
+set $ws9 "9: Browser"
 set $ws10 "10: Spotify and Telegram"
 set $notion "Notion"
 
@@ -295,6 +295,8 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 exec --no-startup-id dunst
 exec_always --no-startup-id fcitx -d
+exec --no-startup-id polybar -r DVI
+exec --no-startup-id polybar -r mybar
 
 
 
@@ -308,16 +310,14 @@ exec_always --no-startup-id fcitx -d
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 #
-bar {
+# bar {
 # output $monitor_1
-font pango:DroidSansMono 9
+# font pango:DroidSansMono 9
         # tray_output none
-	status_command bumblebee-status -m time nic \
-		battery layout bluetooth2 pasink pasource \
-		-p root.path=/ time.format=" %H:%M, %A, %d, %b %Y " date.format="%a, %b %d %Y" \
-		-t nord-powerline
+	# status_command bumblebee-status -m time nic \
+	# 	battery layout bluetooth2 pasink pasource \
+	# 	-p root.path=/ time.format=" %H:%M, %A, %d, %b %Y " date.format="%a, %b %d %Y" \
+	# 	-t nord-powerline
         # status_command bumblebee-status -m datetime nic battery \
 		# pasink pasource -p datetime.format=" %H:%M, %A, %d, %b %Y " -t solarized
-}
-
-
+# }

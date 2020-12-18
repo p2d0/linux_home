@@ -24,3 +24,4 @@
 !.pam_environment
 !.config/systemd/
 !.config/redshift.conf
+!.config/polybar/
