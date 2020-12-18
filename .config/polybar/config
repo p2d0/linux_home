@@ -83,10 +83,10 @@ tray-position = none
 tray-padding = 2
 ; tray-background = #0063ff
 
-;wm-restack = bspwm
+; wm-restack = bspwm
 wm-restack = i3
 
-;override-redirect = true
+; override-redirect = false
 
 ;scroll-up = bspwm-desknext
 ;scroll-down = bspwm-deskprev
