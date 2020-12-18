@@ -45,7 +45,6 @@ for_window [class="Steam"] floating enable
 
 assign [class="TelegramDesktop"] $ws10
 assign [class="discord"] $ws8
-assign [class="Lotion"] $notion
 assign [class="whatsapp-nativefier-d40211"] $ws8
 assign [class="qBittorrent"] $ws8
 
@@ -171,10 +170,9 @@ set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
-set $ws8 "8: Movies and stuff"
-set $ws9 "9: Browser"
-set $ws10 "10: Spotify and Telegram"
-set $notion "Notion"
+set $ws8 "8: "
+set $ws9 "9: "
+set $ws10 "10:  "
 
 set $monitor_1 DP-0
 set $monitor_2 DVI-D-0
@@ -185,7 +183,6 @@ workspace $ws9 output $monitor_2
 workspace $ws10 output $monitor_2
 workspace $ws8 output $monitor_2
 workspace $ws7 output $monitor_2
-workspace $notion output $monitor_1
 
 
 # switch to workspace
@@ -199,7 +196,6 @@ bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
-bindsym $mod+slash workspace $notion
 
 #
 # Cycle through active workspaces
@@ -218,7 +214,6 @@ bindsym $mod+Shift+7 move container to workspace number $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8; workspace $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9; workspace $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10; workspace $ws10
-bindsym $mod+Mod1+slash move container to workspace $notion; workspace $notion
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -264,7 +259,7 @@ exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec pasystray
 
 #Bg
-exec_always feh --bg-fill ~/.config/i3/bg/bright.jpg
+exec_always feh --bg-fill ~/.config/i3/bg/winter-person.jpg
 
 #redshift night light
 exec --no-startup-id redshift-gtk
@@ -295,8 +290,9 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 exec --no-startup-id dunst
 exec_always --no-startup-id fcitx -d
-exec --no-startup-id polybar -r DVI
-exec --no-startup-id polybar -r mybar
+# exec --no-startup-id polybar -r DVI
+# exec --no-startup-id polybar -r mybar
+exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 
 
