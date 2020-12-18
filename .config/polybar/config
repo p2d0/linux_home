@@ -103,8 +103,10 @@ label = %title:0:30:...%
 
 [module/wireguard]
 type = custom/script
-exec = ~/.config/polybar/wg-status.sh
-interval = 5
+exec = ~/.config/polybar/wg-status.sh --status
+interval = 2
+click-left = ~/.config/polybar/wg-status.sh
+
 
 [module/xkeyboard]
 type = internal/xkeyboard
