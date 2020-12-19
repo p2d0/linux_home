@@ -83,6 +83,10 @@ enable_caps_hjkl(){
     sudo sed -i '3 a include "altgr_vim(altgr-vim)"'  /usr/share/X11/xkb/symbols/us
 }
 
+redirect_github_https_to_ssh(){
+    git config --global url.ssh://git@github.com/.insteadOf https://github.com/
+}
+
 case $1 in
     "-h" | "help" | "")
         echo -e "Arguments:\ninstall\nwebkit-theme\npackages\ninstall_zsh\ninternet_fix\nenable_caps_hjkl";;
@@ -107,5 +111,6 @@ case $1 in
         docker_setup
         add_multilib
         enable_caps_hjkl
+        redirect_github_https_to_ssh
         ;;
 esac
