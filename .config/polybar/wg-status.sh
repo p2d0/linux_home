@@ -18,16 +18,21 @@ show_status(){
 
 wg-toggle(){
     if is_off; then
-        wgcf update
-        wg-quick up ~/.config/polybar/wgcf-profile.conf
+        wgcf register --accept-tos
+        wgcf generate
+        sudo wg-quick up ~/.config/polybar/wgcf-profile.conf
     else
-        wg-quick down ~/.config/polybar/wgcf-profile.conf
+        sudo wg-quick down ~/.config/polybar/wgcf-profile.conf
     fi
 }
 
 case "$1" in
     --status)
-        show_status
+        if pgrep -u $UID -x wgcf > /dev/null; then
+            echo "Starting..."
+        else
+            show_status
+        fi
         ;;
     *)
         wg-toggle
