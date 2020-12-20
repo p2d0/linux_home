@@ -39,7 +39,10 @@ for_window [window_role="ranger"] resize set 1000 600
 for_window [window_role="ranger"] move position center
 for_window [class="Panther_launcher"] floating enable
 for_window [class="Panther_launcher"] resize set 1000 500
-for_window [class="Panther_launcher"] move position center
+# for_window [class="Panther_launcher"] move position 10 380
+for_window [class="Panther_launcher"] move position mouse
+for_window [class="Panther_launcher"] move up 40px
+for_window [class="Panther_launcher"] move right 10px
 for_window [class="Steam"] floating enable
 
 
