@@ -78,7 +78,7 @@ font-5 = Weather Icons:size=12;1
 
 modules-left = i3
 modules-center =
-modules-right = xbacklight timer countdown pulseaudio wireguard bluetooth date show-desktop
+modules-right = date xbacklight timer countdown pulseaudio wireguard bluetooth  show-desktop
 tray-position = none
 tray-padding = 2
 ; tray-background = #0063ff
@@ -324,10 +324,10 @@ label-disconnected-foreground = ${colors.foreground-alt}
 type = internal/date
 interval = 5
 
-date = "  %a, %d %b,"
+date = " %a, %d %b"
 date-alt = " %Y-%m-%d"
 
-time = %H:%M
+time = " %H:%M"
 time-alt = %H:%M:%S
 
 format-prefix = 
@@ -335,7 +335,7 @@ format-prefix-foreground = ${colors.accent}
 format-prefix-font = 5
 format-underline = #0a6cf5
 
-label = %date% %time%
+label = %time% %date%
 
 [module/pulseaudio]
 type = internal/pulseaudio

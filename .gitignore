@@ -25,3 +25,4 @@
 !.config/systemd/
 !.config/redshift.conf
 !.config/polybar/
+!.config/rofi/
