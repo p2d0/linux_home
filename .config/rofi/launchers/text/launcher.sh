@@ -25,7 +25,7 @@ color="${styles[$(( $RANDOM % 10 ))]}"
 
 # theme="${themes[6]}"
 
-rofi -no-lazy-grab -show run \
--modi run,calc \
+rofi -no-lazy-grab -show drun \
+-modi run,drun,calc \
 -theme $dir/"$theme"
 
