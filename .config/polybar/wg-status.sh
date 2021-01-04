@@ -18,6 +18,7 @@ show_status(){
 
 wg-toggle(){
     if is_off; then
+        rm ~/.config/polybar/wgcf-account.toml
         wgcf register --accept-tos
         wgcf generate
         sudo wg-quick up ~/.config/polybar/wgcf-profile.conf

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 
-theme="style_3"
+theme="style_1"
 
 dir="$HOME/.config/rofi/launchers/text"
 styles=($(ls -p --hide="colors.rasi" $dir/styles))
