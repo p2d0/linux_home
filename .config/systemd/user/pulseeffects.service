@@ -1,0 +1,8 @@
+[Unit]
+Description=Pulseeffects
+
+[Service]
+ExecStart=pulseeffects --gapplication-service
+
+[Install]
+WantedBy=default.target
