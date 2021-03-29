@@ -50,6 +50,7 @@ assign [class="TelegramDesktop"] $ws10
 assign [class="discord"] $ws8
 assign [class="whatsapp-nativefier-d40211"] $ws8
 assign [class="qBittorrent"] $ws8
+assign [class="Ao"] $ws7
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -169,9 +170,9 @@ set $ws3 "3"
 set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
-set $ws7 "7"
+set $ws7 "7: "
 set $ws8 "8: "
-set $ws9 "9: "
+set $ws9 "9: "
 set $ws10 "10:  "
 
 set $monitor_1 DP-0
@@ -259,10 +260,13 @@ exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec pasystray
 
 #Bg
-exec_always feh --bg-fill ~/.config/i3/bg/530895_souredapple_clouds.png
+# exec_always feh --bg-fill ~/.config/i3/bg/soheb-zaidi.png
+exec --no-startup-id variety
 
 #redshift night light
 exec --no-startup-id redshift-gtk
+
+exec --no-startup-id ao
 
 #Guake
 exec_always  guake

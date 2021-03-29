@@ -10,7 +10,7 @@ export ZSH="/home/$USER/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="agnoster"
+ZSH_THEME="jtriley"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -70,8 +70,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git
-         adb
+plugins=(adb
          command-not-found
          colorize
          composer z)
@@ -105,6 +104,9 @@ source $ZSH/oh-my-zsh.sh
 
 favoka=u0504861@favoka.art
 climbtech=u0673162@climbtech.ru
+finfactory_back="andrew@my.finfactory.one/api -p 2067"
+finfactory_front="andrew@my.finfactory.one"
+finfactory_bd="andrew@176.122.25.49 -p 2067"
 
 favoka_mount=$favoka:/var/www/u0504861/data
 alias mount_favoka="sshfs $favoka_mount ~/favoka-prod"
@@ -149,24 +151,32 @@ if [ -d "/opt/toolchains/arm-eabi-4.6/bin" ] ; then
     PATH="/opt/toolchains/arm-eabi-4.6/bin:$PATH"
 fi
 
+PATH="/home/andrew/.local/share/gem/ruby/2.7.0/bin:$PATH"
+
 alias python=python2
+
 export PATH="$PATH:/home/$USER/.dotnet/tools"
 export PATH="$PATH:/home/$USER/.emacs.d/bin"
 export PATH="$PATH:/home/$USER/.local/bin"
+
 alias rf="gnome-terminal --role=ranger -x ranger"
+
 export VISUAL="emacsclient -n"
 export PAGER=more
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 ssh-add  "/home/$USER/.ssh/finfactory"
-# EmacsClient -n shortcut
+
 alias em="emacsclient -n"
-alias dotnet-test="dotnet test"
+
 alias dotnet-test-debug="VSTEST_HOST_DEBUG=1 dotnet test"
-alias dotnet-waza="dotnet exec /usr/share/dotnet/sdk/3.1.108/vstest.console.dll --testAdapterPath:/mnt/Home/nuget/coverlet.collector/1.2.0/build/netstandard1.0/ --framework:.NETCoreApp,Version=v2.1 /mnt/Home/AlexeyTema/ff_back-master/src/FinFactory.Api.Test/bin/Debug/netcoreapp2.1/FinFactory.Api.Test.dll"
-alias dotnet-vstest="dotnet exec /usr/share/dotnet/sdk/3.1.108/vstest.console.dll"
+
 alias list-packages='expac -H M "%011m\t%-20n\t%10d" $(comm -23 <(yay -Qqen | sort) <({ yay -Qqe; expac -l "\n" "%E" base; } | sort | uniq)) | sort -n | less'
+
 if [ -d "/mnt/Home/nuget" ]; then
    export NUGET_PACKAGES="/mnt/Home/nuget"
 fi
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"

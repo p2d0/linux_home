@@ -78,7 +78,7 @@ font-5 = Weather Icons:size=12;1
 
 modules-left = i3
 modules-center =
-modules-right = date xbacklight countdown pulseaudio wireguard bluetooth  show-desktop
+modules-right = date xbacklight pulseaudio wireguard bluetooth  show-desktop
 tray-position = none
 tray-padding = 2
 ; tray-background = #0063ff
