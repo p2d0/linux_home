@@ -74,11 +74,12 @@ font-1 = ShureTechMono Nerd Font:fontformat=truetype:size=12;3
 font-2 = ShureTechMono Nerd Font:pixelsize=12;1
 font-3 = ShureTechMono Nerd Font:fontformat=truetype:size=17;3
 font-4 = ShureTechMono Nerd Font:fontformat=truetype:size=14;3
-font-5 = Weather Icons:size=12;1
+font-5 = Weather Icons:size=12;5
+font-6 = MaterialIcons:size=15;6
 
 modules-left = i3
 modules-center =
-modules-right = date xbacklight pulseaudio wireguard bluetooth  show-desktop
+modules-right = weather date xbacklight pulseaudio wireguard bluetooth  show-desktop
 tray-position = none
 tray-padding = 2
 ; tray-background = #0063ff
@@ -518,6 +519,13 @@ type = custom/script
 exec = ~/.config/polybar/system-bluetooth-bluetoothctl.sh
 tail = true
 click-left = ~/.config/polybar/system-bluetooth-bluetoothctl.sh --toggle &
+
+[module/weather]
+type = custom/script
+exec = ~/.config/polybar/polybar-forecast-linux-x86_64
+exec-if = ping openweathermap.org -c 1
+interval = 600
+label-font = 6
 
 [settings]
 screenchange-reload = true

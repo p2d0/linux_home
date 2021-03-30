@@ -25,4 +25,5 @@
 !.config/systemd/
 !.config/redshift.conf
 !.config/polybar/
+.config/polybar/config.toml
 !.config/rofi/
