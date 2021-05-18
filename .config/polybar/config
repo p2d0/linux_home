@@ -79,7 +79,7 @@ font-6 = MaterialIcons:size=15;6
 
 modules-left = i3
 modules-center =
-modules-right = weather date xbacklight pulseaudio wireguard bluetooth  show-desktop
+modules-right = text weather date xbacklight pulseaudio wireguard bluetooth  show-desktop
 tray-position = none
 tray-padding = 2
 ; tray-background = #0063ff
@@ -132,6 +132,10 @@ content-suffix = " "
 content-padding = 1
 content-background = ${colors.foreground}
 content-foreground = #000
+
+[module/text]
+type = custom/text
+content = "When in doubt - Start small or Pseudocode"
 
 [module/timer]
 

@@ -115,7 +115,8 @@ export VISUAL="emacsclient"
 export EDITOR="$VISUAL"
 
 # | clip
-alias clip="xclip -sel clip"
+alias clip="xclip -selection clipboard"
+# alias clip-file="xclip -selection clipboard -t text/uri-list"
 
 h265(){
     case $1 in
@@ -125,6 +126,25 @@ h265(){
             echo ffmpeg -i $file -c:v libx265 -c:a copy $out
             ffmpeg -i "$1" -c:v libx265 -c:a copy "$2";;
     esac
+}
+
+fp () {
+    case "$1" in
+        /*) printf '%s\n' "$1";;
+        *) printf '%s\n' "file://$PWD/$1";;
+    esac
+}
+
+clip-file(){
+    fp $1 | xclip -selection clipboard -t text/uri-list
+}
+clip-files(){
+    files=("${(@f)$(fd -aI $1)}")
+    arr=();
+    for file in $files; do
+        arr+=("file:/$file\n");
+    done
+    echo $arr | xclip -i -selection clipboard -t text/uri-list
 }
 
 vapi(){
@@ -137,6 +157,28 @@ vapi(){
                 -c:a libopus -b:a 64k -f webm "$2";;
     esac
 }
+
+export_docx(){
+    fullname=$(basename $1);
+    filename="${fullname%.*}"
+    mkdir -p $filename
+    mammoth $1 --output-dir=./$filename
+}
+
+peco_select_history() {
+    local tac
+    if which tac > /dev/null; then
+        tac="tac"
+    else
+        tac="tail -r"
+    fi
+    BUFFER=$(fc -l -n 1 | eval $tac | peco --query "$LBUFFER")
+    CURSOR=$#BUFFER
+    zle -R -c
+}
+
+zle -N peco_select_history
+bindkey '^R' peco_select_history
 
 export USE_CCACHE=1
 export CCACHE_EXEC=/usr/bin/ccache
@@ -175,8 +217,22 @@ alias dotnet-test-debug="VSTEST_HOST_DEBUG=1 dotnet test"
 alias list-packages='expac -H M "%011m\t%-20n\t%10d" $(comm -23 <(yay -Qqen | sort) <({ yay -Qqe; expac -l "\n" "%E" base; } | sort | uniq)) | sort -n | less'
 
 if [ -d "/mnt/Home/nuget" ]; then
-   export NUGET_PACKAGES="/mnt/Home/nuget"
+    export NUGET_PACKAGES="/mnt/Home/nuget"
 fi
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="$PATH:/root/.local/share/gem/ruby/3.0.0/bin"
+export PATH="$PATH:/home/andrew/.gem/ruby/3.0.0/bin"
+HISTSIZE=10000000
+SAVEHIST=10000000
+
+
+export CUDA_HOME=/opt/cuda
+export PATH=${CUDA_HOME}/bin:$PATH
+export LD_LIBRARY_PATH=${CUDA_HOME}/lib64:$LD_LIBRARY_PATH
+
+export VISUAL=vim
+autoload -z edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd "^X^E"  edit-command-line

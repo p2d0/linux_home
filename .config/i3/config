@@ -44,13 +44,13 @@ for_window [class="Panther_launcher"] move position mouse
 for_window [class="Panther_launcher"] move up 40px
 for_window [class="Panther_launcher"] move right 10px
 for_window [class="Steam"] floating enable
+for_window [class="Anki"] floating enable
 
 
 assign [class="TelegramDesktop"] $ws10
 assign [class="discord"] $ws8
 assign [class="whatsapp-nativefier-d40211"] $ws8
 assign [class="qBittorrent"] $ws8
-assign [class="Ao"] $ws7
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -266,7 +266,6 @@ exec --no-startup-id variety
 #redshift night light
 exec --no-startup-id redshift-gtk
 
-exec --no-startup-id ao
 
 #Guake
 exec_always  guake
@@ -279,6 +278,8 @@ exec --no-startup-id setxkbmap us,ru -option 'grp:alt_shift_toggle'
 exec --no-startup-id xinput --set-prop 12 'libinput Accel Profile Enabled' 0, 1
 exec --no-startup-id xinput --set-prop 13 'libinput Accel Profile Enabled' 0, 1
 exec --no-startup-id xinput --set-prop 18 'libinput Accel Profile Enabled' 0, 1
+exec --no-startup-id xinput --set-prop 9 'libinput Accel Profile Enabled' 0, 1
+exec --no-startup-id xinput --set-prop 11 'libinput Accel Profile Enabled' 0, 1
 #Other
 exec env LD_PRELOAD=/usr/lib/spotify-adblock.so spotify %U
 
