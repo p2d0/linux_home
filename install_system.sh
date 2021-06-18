@@ -13,7 +13,7 @@ home_dir=/home/$USER
 
 install_packages(){
     yay -Sy dmenu rofi rofi-calc spotify telegram-desktop ttf-font-awesome bumblebee-status feh redshift emacs  \
-        i3lock guake gnome-terminal gnome-disk-utility picom polkit-gnome flameshot pasystray pulseaudio \
+        i3lock zramd guake gnome-terminal gnome-disk-utility picom polkit-gnome flameshot pasystray pulseaudio \
         peco \
         polybar \
         pulseaudio-bluetooth albert breeze breeze-gtk panther-launcher-git fcitx fcitx-mozc fcitx-qt5 \
@@ -88,6 +88,11 @@ redirect_github_https_to_ssh(){
     git config --global url.ssh://git@github.com/.insteadOf https://github.com/
 }
 
+enable_systemd_oomd_service(){
+    sudo systemctl enable systemd-oomd.service;
+}
+
+
 case $1 in
     "-h" | "help" | "")
         echo -e "Arguments:\ninstall\nwebkit-theme\npackages\ninstall_zsh\ninternet_fix\nenable_caps_hjkl";;
@@ -113,5 +118,6 @@ case $1 in
         add_multilib
         enable_caps_hjkl
         redirect_github_https_to_ssh
+        enable_systemd_oomd_service
         ;;
 esac

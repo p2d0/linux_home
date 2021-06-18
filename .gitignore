@@ -27,3 +27,4 @@
 !.config/polybar/
 .config/polybar/config.toml
 !.config/rofi/
+!jetbrainsettings.zip

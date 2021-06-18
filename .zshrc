@@ -165,6 +165,10 @@ export_docx(){
     mammoth $1 --output-dir=./$filename
 }
 
+pick_color(){
+    (gpick -p &); pid=$(pidof gpick); sleep 5; xclip -se c -o | xclip -i -se c -l 1; kill $pid
+}
+
 peco_select_history() {
     local tac
     if which tac > /dev/null; then
@@ -234,5 +238,6 @@ export LD_LIBRARY_PATH=${CUDA_HOME}/lib64:$LD_LIBRARY_PATH
 
 export VISUAL=vim
 autoload -z edit-command-line
+autoload zmv
 zle -N edit-command-line
 bindkey -M vicmd "^X^E"  edit-command-line

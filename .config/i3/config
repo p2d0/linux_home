@@ -85,7 +85,11 @@ bindsym $mod+m exec panther_launcher
 
 # TODO extract
 # Switch between 1 & 2 workspaces
-bindsym $mod+Shift+l exec ~/.config/i3/lock.sh
+bindsym $mod+Shift+l exec  ~/.config/i3/lock.sh
+
+# Eyedrop gpick
+bindsym $mod+i exec --no-startup-id ~/.config/i3/pick_color.sh
+
 
 # start a terminal
 bindsym $mod+Return exec gnome-terminal
