@@ -28,3 +28,6 @@
 .config/polybar/config.toml
 !.config/rofi/
 !jetbrainsettings.zip
+!.ideavimrc
+!.intellimacs/
+!.intellimacs/*
