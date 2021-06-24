@@ -2,7 +2,7 @@ source ~/.intellimacs/spacemacs.vim
 
 " (Optional) Enable other Intellimacs modules
 # source ~/.intellimacs/extra.vim
-# source ~/.intellimacs/major.vim
+source ~/.intellimacs/major.vim
 # source ~/.intellimacs/hybrid.vim
 
 " (Optional) Enable which-key plugin
@@ -59,6 +59,24 @@ vnoremap <leader>c=    :action ReformatCode<CR>
 let g:WhichKeyDesc_Leader_Space = "<leader><Space> Find files"
 nnoremap <leader><Space>    :action GotoFile<CR>
 vnoremap <leader><Space>    :action GotoFile<CR>
+
+" Search and replace in current file by using Intellij Search
+let g:WhichKeyDesc_SearchSymbol_ReplaceInFile = "<leader>se replace-in-file"
+nnoremap <leader>se    :action Replace<CR>
+vnoremap <leader>se    :action Replace<CR>
+
+let g:WhichKeyDesc_Debug = "<leader>d Debug"
+let g:WhichKeyDesc_Debug_ToggleBreakpoint = "<leader>da Add/Remove Breakpoint"
+nnoremap <leader>da    :action ToggleLineBreakpoint<CR>
+vnoremap <leader>da    :action ToggleLineBreakpoint<CR>
+
+let g:WhichKeyDesc_Debug_Remove = "<leader>dr Remove"
+let g:WhichKeyDesc_Debug_Remove_ALL = "<leader>dra Remove All breakpoints"
+nnoremap <leader>dra    :action Debugger.RemoveAllBreakpoints<CR>
+
+let g:WhichKeyDesc_Debug_Continue = "<leader>dc Continue"
+nnoremap <leader>dc  :action Resume<CR>
+
 
 " (Optional) Comma for major mode
 nmap , <leader>m
