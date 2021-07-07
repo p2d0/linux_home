@@ -18,7 +18,7 @@ install_packages(){
         polybar \
         pulseaudio-bluetooth breeze breeze-gtk panther-launcher-git fcitx fcitx-mozc fcitx-qt5 \
         i3-gaps lightdm-webkit2-greeter lightdm-webkit2-theme-glorious dunst python-pywal i3lock-color \
-        qt5ct qbittorrent lxappearance gimp discord docker docker-compose fira-code xorg-server brave ttf-droid-min \
+        qt5ct qbittorrent lxappearance gimp discord docker docker-compose ttf-fira-code xorg-server brave ttf-droid-min \
         xorg-xinput noto-fonts ntfs-3g openssh fcitx-configtool
 }
 
