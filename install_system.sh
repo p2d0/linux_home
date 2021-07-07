@@ -17,8 +17,8 @@ install_packages(){
         peco \
         polybar \
         pulseaudio-bluetooth breeze breeze-gtk panther-launcher-git fcitx fcitx-mozc fcitx-qt5 \
-        i3-gaps lightdm-webkit2-greeter lightdm-webkit-theme-sequoia-git dunst python-pywal i3lock-color \
-        qt5ct lxappearance gimp discord docker docker-compose fira-code xorg-server brave ttf-droid-min \
+        i3-gaps lightdm-webkit2-greeter lightdm-webkit2-theme-glorious dunst python-pywal i3lock-color \
+        qt5ct qbittorent lxappearance gimp discord docker docker-compose fira-code xorg-server brave ttf-droid-min \
         xorg-xinput noto-fonts ntfs-3g openssh fcitx-configtool
 }
 
@@ -48,9 +48,9 @@ install_lightdm_webkit_greeter(){
 }
 
 install_webkit_theme(){
-    if ! cat /etc/lightdm/lightdm-webkit2-greeter.conf | grep sequoia
+    if ! cat /etc/lightdm/lightdm-webkit2-greeter.conf | grep glorious
     then
-        sudo sed -i 's/webkit_theme.*/webkit_theme = sequoia/g' /etc/lightdm/lightdm-webkit2-greeter.conf
+        sudo sed -i 's/webkit_theme.*/webkit_theme = glorious/g' /etc/lightdm/lightdm-webkit2-greeter.conf
     fi
 }
 
