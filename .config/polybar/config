@@ -79,7 +79,7 @@ font-6 = MaterialIcons:size=15;6
 
 modules-left = i3
 modules-center =
-modules-right = text weather date xbacklight pulseaudio wireguard bluetooth  show-desktop
+modules-right = weather date xbacklight pulseaudio wireguard bluetooth
 tray-position = none
 tray-padding = 2
 ; tray-background = #0063ff
@@ -528,7 +528,7 @@ click-left = ~/.config/polybar/system-bluetooth-bluetoothctl.sh --toggle &
 type = custom/script
 exec = ~/.config/polybar/polybar-forecast-linux-x86_64
 exec-if = ping openweathermap.org -c 1
-interval = 600
+interval = 6000
 label-font = 6
 
 [settings]
