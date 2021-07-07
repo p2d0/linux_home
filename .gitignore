@@ -32,3 +32,5 @@
 !.intellimacs/
 !.intellimacs/*
 !altgr_vim
+!.gnupg/
+!.gnupg/gpg.conf
