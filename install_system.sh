@@ -18,7 +18,7 @@ install_packages(){
         polybar \
         pulseaudio-bluetooth breeze breeze-gtk panther-launcher-git fcitx fcitx-mozc fcitx-qt5 \
         i3-gaps lightdm-webkit2-greeter lightdm-webkit2-theme-glorious dunst python-pywal i3lock-color \
-        qt5ct qbittorent lxappearance gimp discord docker docker-compose fira-code xorg-server brave ttf-droid-min \
+        qt5ct qbittorrent lxappearance gimp discord docker docker-compose fira-code xorg-server brave ttf-droid-min \
         xorg-xinput noto-fonts ntfs-3g openssh fcitx-configtool
 }
 
@@ -77,6 +77,7 @@ internet_fix(){
 
 add_multilib(){
     sudo sed -ie '92,93 s/^.//' /etc/pacman.conf
+    sudo sed -ie '92,94 s/^.//' /etc/pacman.conf
 }
 
 enable_caps_hjkl(){
@@ -95,7 +96,7 @@ enable_systemd_oomd_service(){
 
 case $1 in
     "-h" | "help" | "")
-        echo -e "Arguments:\ninstall\nwebkit-theme\npackages\ninstall_zsh\ninternet_fix\nenable_caps_hjkl";;
+        echo -e "Arguments:\ninstall\nwebkit-theme\ninstall_packages\ninstall_zsh\ninternet_fix\nenable_caps_hjkl";;
     install_webkit_theme)
         install_webkit_theme;;
     install_packages)
@@ -108,6 +109,7 @@ case $1 in
         enable_caps_hjkl
         ;;
     install)
+        add_multilib
         install_packages
         add_gpg_key
         install_zsh
@@ -115,7 +117,6 @@ case $1 in
         install_webkit_theme
         install_doom_emacs
         docker_setup
-        add_multilib
         enable_caps_hjkl
         redirect_github_https_to_ssh
         enable_systemd_oomd_service
