@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 if ! command -v yay &> /dev/null
 then
-    pacman -S --needed base-devel
+    sudo pacman -S --needed base-devel
     mkdir build
     cd build
     git clone https://aur.archlinux.org/yay.git
@@ -12,13 +12,13 @@ fi
 home_dir=/home/$USER
 
 install_packages(){
-    yay -Sy dmenu rofi rofi-calc spotify telegram-desktop ttf-font-awesome bumblebee-status feh redshift emacs  \
+    yay -Sy dmenu rofi rofi-calc spotify-adblock-git telegram-desktop ttf-font-awesome feh redshift emacs  \
         i3lock zramd guake gnome-terminal gnome-disk-utility picom polkit-gnome flameshot pasystray pulseaudio \
         peco \
         polybar \
-        pulseaudio-bluetooth albert breeze breeze-gtk panther-launcher-git fcitx fcitx-mozc fcitx-qt5 \
+        pulseaudio-bluetooth breeze breeze-gtk panther-launcher-git fcitx fcitx-mozc fcitx-qt5 \
         i3-gaps lightdm-webkit2-greeter lightdm-webkit-theme-sequoia-git dunst python-pywal i3lock-color \
-        qt5ct lxappearance gimp discord docker docker-compose fira-code xorg-server firefox ttf-droid-min \
+        qt5ct lxappearance gimp discord docker docker-compose fira-code xorg-server brave ttf-droid-min \
         xorg-xinput noto-fonts ntfs-3g openssh fcitx-configtool
 }
 
