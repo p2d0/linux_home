@@ -34,3 +34,10 @@
 !altgr_vim
 !.hygen.js
 !.hygen.spec.js
+!.local/
+!.local/share
+!.local/share/nautilus
+!.local/share/nautilus/scripts
+!.local/share/nautilus/scripts/*
+!.local/share/nautilus/scripts/test
+!.local/share/nautilus/scripts/test/*
