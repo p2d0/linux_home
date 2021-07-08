@@ -32,3 +32,5 @@
 !.intellimacs/
 !.intellimacs/*
 !altgr_vim
+!.hygen.js
+!.hygen.spec.js
