@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+
 if ! command -v yay &> /dev/null
 then
     sudo pacman -S --needed base-devel
@@ -18,7 +18,8 @@ install_packages(){
         polybar \
         pulseaudio-bluetooth breeze breeze-gtk panther-launcher-git fcitx fcitx-mozc fcitx-qt5 \
         i3-gaps lightdm-webkit2-greeter lightdm-webkit2-theme-glorious dunst python-pywal i3lock-color \
-        qt5ct qbittorrent lxappearance gimp discord docker docker-compose ttf-fira-code \
+        qt5ct qbittorrent wgcf wireguard-tools lxappearance gimp discord docker docker-compose ttf-fira-code \
+        ttf-weather-icons \
         ttf-nerd-fonts-symbols \
         ttf-nerd-fonts-symbols-mono xorg-server brave ttf-droid-min \
         xorg-xinput noto-fonts ntfs-3g openssh fcitx-configtool
