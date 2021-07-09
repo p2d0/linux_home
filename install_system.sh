@@ -14,21 +14,20 @@ home_dir=/home/$USER
 install_packages(){
     yay -Sy dmenu rofi rofi-calc spotify-adblock-git telegram-desktop ttf-font-awesome feh redshift emacs  \
         i3lock zramd guake gnome-terminal gnome-disk-utility picom polkit-gnome flameshot pasystray pulseaudio \
-        peco \
+        peco-bin \
         polybar \
         pulseaudio-bluetooth breeze breeze-gtk panther-launcher-git fcitx fcitx-mozc fcitx-qt5 \
         i3-gaps lightdm-webkit2-greeter lightdm-webkit2-theme-glorious dunst python-pywal i3lock-color \
-        qt5ct qbittorrent lxappearance gimp discord docker docker-compose ttf-fira-code xorg-server brave ttf-droid-min \
+        qt5ct qbittorrent lxappearance gimp discord docker docker-compose ttf-fira-code \
+        ttf-nerd-fonts-symbols \
+        ttf-nerd-fonts-symbols-mono xorg-server brave ttf-droid-min \
         xorg-xinput noto-fonts ntfs-3g openssh fcitx-configtool
 }
 
 install_zsh(){
-    if [ command -v zsh &> /dev/null ]
-    then
-        yay -Sy zsh
-        chsh -s /bin/zsh
-        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-    fi
+    yay -Sy zsh
+    chsh -s /bin/zsh
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 }
 
 
@@ -36,7 +35,7 @@ add_gpg_key(){
     if ! cat /etc/pacman.d/gnupg/gpg.conf | grep hkp://keys.gnupg
     then
         sudo sh -c "echo 'keyserver hkp://keys.gnupg.net' >> /etc/pacman.d/gnupg/gpg.conf"
-	sudo cp /etc/pacman.d/gnupg/gpg.conf $home_dir/.gnupg/gpg.conf
+	    sudo cp /etc/pacman.d/gnupg/gpg.conf $home_dir/.gnupg/gpg.conf
     fi
 }
 
@@ -76,8 +75,7 @@ internet_fix(){
 }
 
 add_multilib(){
-    sudo sed -ie '92,93 s/^.//' /etc/pacman.conf
-    sudo sed -ie '92,94 s/^.//' /etc/pacman.conf
+    sudo sed -ie '92,94 s/#\s?//' /etc/pacman.conf
 }
 
 enable_caps_hjkl(){
@@ -91,6 +89,10 @@ redirect_github_https_to_ssh(){
 
 enable_systemd_oomd_service(){
     sudo systemctl enable systemd-oomd.service;
+}
+
+enable_lightdm_service(){
+    sudo systemctl enable lightdm.service;
 }
 
 
@@ -120,5 +122,6 @@ case $1 in
         enable_caps_hjkl
         redirect_github_https_to_ssh
         enable_systemd_oomd_service
+        enable_lightdm_service
         ;;
 esac

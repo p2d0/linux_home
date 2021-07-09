@@ -41,3 +41,5 @@
 !.local/share/nautilus/scripts/*
 !.local/share/nautilus/scripts/test
 !.local/share/nautilus/scripts/test/*
+!.gnupg/
+!.gnupg/gpg.conf
