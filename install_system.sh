@@ -107,6 +107,7 @@ configure_git_credentials(){
 install_weather_config(){
     echo "Input OpenWeatherApiPolybar (https://home.openweathermap.org/api_keys) key:"
     read api_key
+    touch $home_dir/.config/polybar/config.toml;
     cat "
     # If you don't want to write your key here, you can delete this line and use the OWM_API_KEY environment variable instead
     api_key = \"$api_key\"
