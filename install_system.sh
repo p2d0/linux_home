@@ -13,7 +13,7 @@ home_dir=/home/$USER
 
 install_packages(){
     yay -Sy dmenu rofi rofi-calc spotify-adblock-git telegram-desktop ttf-font-awesome feh redshift emacs  \
-        i3lock zramd guake gnome-terminal gnome-disk-utility picom polkit-gnome flameshot pasystray pulseaudio \
+        i3lock zramd guake gnome-terminal nautilus gnome-disk-utility picom polkit-gnome flameshot pasystray pulseaudio \
         peco-bin \
         polybar \
         bluez-utils pulseaudio-bluetooth breeze breeze-gtk panther-launcher-git fcitx fcitx-mozc fcitx-qt5 \
@@ -131,6 +131,12 @@ install_weather_config(){
     " >> $home_dir/.config/polybar/config.toml;
 }
 
+install_shure_font(){
+    wget -O shure_mono.ttf https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/ShareTechMono/complete/Shure%20Tech%20Mono%20Nerd%20Font%20Complete.ttf?raw=true
+    mv shure_mono.ttf $home_dir/.local/share/fonts/
+    fc-cache
+}
+
 
 case $1 in
     "-h" | "help" | "")
@@ -169,5 +175,6 @@ case $1 in
         enable_systemd_oomd_service
         enable_lightdm_service
         configure_git_credentials
+        install_shure_font
         ;;
 esac
