@@ -20,7 +20,6 @@ install_packages(){
         i3-gaps lightdm-webkit2-greeter lightdm-webkit2-theme-glorious dunst python-pywal i3lock-color \
         qt5ct qbittorrent wgcf wireguard-tools lxappearance gimp discord docker docker-compose ttf-fira-code \
         ttf-weather-icons \
-        ttf-nerd-fonts-symbols \
         ttf-nerd-fonts-symbols-mono xorg-server brave ttf-droid-min \
         xorg-xinput noto-fonts ntfs-3g openssh fcitx-configtool
 }
