@@ -95,12 +95,50 @@ enable_lightdm_service(){
     sudo systemctl enable lightdm.service;
 }
 
+configure_git_credentials(){
+    echo "Input git Email:";
+    read email;
+    echo "Input git Username:"
+    read username;
+    git config --global user.email "$email";
+    git config --global user.name "$username";
+}
+
+install_weather_config(){
+    echo "Input OpenWeatherApiPolybar (https://home.openweathermap.org/api_keys) key:"
+    read api_key
+    cat "
+    # If you don't want to write your key here, you can delete this line and use the OWM_API_KEY environment variable instead
+    api_key = \"$api_key\"
+
+    # This is for Montreal, find your city at https://openweathermap.org
+    # The id will be the last part of the URL
+    city_id = \"524901\"
+
+    # Output format, using Handlebars syntax, meaning variables should be used like {{ this }}
+    # Available tokens are:
+    # - temp_celcius
+    # - temp_kelvin
+    # - temp_fahrenheit
+    # - temp_icon
+    # - trend
+    # - forecast_celcius
+    # - forecast_kelvin
+    # - forecast_fahrenheit
+    # - forecast_icon
+    display = \"{{ temp_icon }} {{ temp_celcius }}°C {{ trend }} {{ forecast_icon }} {{ forecast_celcius }}°C\"
+    " >> $home_dir/.config/polybar/config.toml;
+}
+
 
 case $1 in
     "-h" | "help" | "")
-        echo -e "Arguments:\ninstall\nwebkit-theme\ninstall_packages\ninstall_zsh\ninternet_fix\nenable_caps_hjkl\ninstall_doom_emacs";;
+        echo -e "Arguments:\ninstall_weather_config\ninstall\nwebkit-theme\ninstall_packages\ninstall_zsh\ninternet_fix\nenable_caps_hjkl\ninstall_doom_emacs";;
     install_webkit_theme)
         install_webkit_theme;;
+    install_weather_config)
+        install_weather_config
+        ;;
     install_packages)
         install_packages;;
     internet_fix)
@@ -112,6 +150,9 @@ case $1 in
         ;;
     install_doom_emacs)
         install_doom_emacs
+        ;;
+    configure_git_credentials)
+        configure_git_credentials
         ;;
     install)
         add_multilib
@@ -126,5 +167,6 @@ case $1 in
         redirect_github_https_to_ssh
         enable_systemd_oomd_service
         enable_lightdm_service
+        configure_git_credentials
         ;;
 esac
