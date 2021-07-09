@@ -16,7 +16,7 @@ install_packages(){
         i3lock zramd guake gnome-terminal gnome-disk-utility picom polkit-gnome flameshot pasystray pulseaudio \
         peco-bin \
         polybar \
-        pulseaudio-bluetooth breeze breeze-gtk panther-launcher-git fcitx fcitx-mozc fcitx-qt5 \
+        bluez-utils pulseaudio-bluetooth breeze breeze-gtk panther-launcher-git fcitx fcitx-mozc fcitx-qt5 \
         i3-gaps lightdm-webkit2-greeter lightdm-webkit2-theme-glorious dunst python-pywal i3lock-color \
         qt5ct qbittorrent wgcf wireguard-tools lxappearance gimp discord docker docker-compose ttf-fira-code \
         ttf-weather-icons \
@@ -98,7 +98,7 @@ enable_lightdm_service(){
 
 case $1 in
     "-h" | "help" | "")
-        echo -e "Arguments:\ninstall\nwebkit-theme\ninstall_packages\ninstall_zsh\ninternet_fix\nenable_caps_hjkl";;
+        echo -e "Arguments:\ninstall\nwebkit-theme\ninstall_packages\ninstall_zsh\ninternet_fix\nenable_caps_hjkl\ninstall_doom_emacs";;
     install_webkit_theme)
         install_webkit_theme;;
     install_packages)
@@ -109,6 +109,9 @@ case $1 in
         install_zsh;;
     enable_caps_hjkl)
         enable_caps_hjkl
+        ;;
+    install_doom_emacs)
+        install_doom_emacs
         ;;
     install)
         add_multilib
