@@ -181,6 +181,9 @@ peco_select_history() {
     zle -R -c
 }
 
+alias wg-start="sudo wg-quick up wgcf-profile.conf"
+alias wg-stop="sudo wg-quick down wgcf-profile.conf"
+
 zle -N peco_select_history
 bindkey '^R' peco_select_history
 

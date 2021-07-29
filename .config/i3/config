@@ -45,7 +45,10 @@ for_window [class="Panther_launcher"] move up 40px
 for_window [class="Panther_launcher"] move right 10px
 for_window [class="Steam"] floating enable
 for_window [class="Anki"] floating enable
-
+for_window [class="Pavucontrol"] floating enable
+for_window [class="Pavucontrol"] resize set 500 400
+for_window [class="Pavucontrol"] move position mouse
+for_window [class="Yad" title="yad-calendar"] floating enable
 
 assign [class="TelegramDesktop"] $ws10
 assign [class="discord"] $ws8
@@ -180,7 +183,7 @@ set $ws9 "9: "
 set $ws10 "10:  "
 
 set $monitor_1 DP-0
-set $monitor_2 DVI-D-0
+set $monitor_2 DVI-D-1
 
 workspace $ws1 output $monitor_1
 workspace $ws2 output $monitor_1

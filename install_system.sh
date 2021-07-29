@@ -13,14 +13,15 @@ home_dir=/home/$USER
 
 install_packages(){
     yay -Sy dmenu rofi rofi-calc spotify-adblock-git telegram-desktop ttf-font-awesome feh redshift emacs  \
-        i3lock zramd guake gnome-terminal nautilus gnome-disk-utility picom polkit-gnome flameshot pasystray pulseaudio \
+        i3lock zramd guake gnome-terminal paprefs pavucontrol yad openresolv nautilus gnome-disk-utility polkit-gnome flameshot pasystray pulseaudio \
         peco-bin \
         polybar \
         bluez-utils pulseaudio-bluetooth breeze breeze-gtk panther-launcher-git fcitx fcitx-mozc fcitx-qt5 \
         i3-gaps lightdm-webkit2-greeter lightdm-webkit2-theme-glorious dunst python-pywal i3lock-color \
         qt5ct qbittorrent wgcf wireguard-tools lxappearance gimp discord docker docker-compose ttf-fira-code \
-        ttf-weather-icons \
-        ttf-nerd-fonts-symbols-mono xorg-server brave ttf-droid-min \
+        ttf-weather-icons gnu-free-fonts ttf-arphic-uming ttf-baekmuk \
+        ttf-nerd-fonts-symbols-mono xorg-server brave adobe-source-han-sans-jp-fonts adobe-source-han-serif-jp-fonts \
+        ttf-hanazono otf-ipafont \
         xorg-xinput noto-fonts ntfs-3g openssh fcitx-configtool
 }
 
@@ -35,7 +36,7 @@ add_gpg_key(){
     if ! cat /etc/pacman.d/gnupg/gpg.conf | grep hkp://keys.gnupg
     then
         sudo sh -c "echo 'keyserver hkp://keys.gnupg.net' >> /etc/pacman.d/gnupg/gpg.conf"
-	    sudo cp /etc/pacman.d/gnupg/gpg.conf $home_dir/.gnupg/gpg.conf
+        sudo cp /etc/pacman.d/gnupg/gpg.conf $home_dir/.gnupg/gpg.conf
     fi
 }
 

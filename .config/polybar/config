@@ -79,7 +79,7 @@ font-6 = MaterialIcons:size=15;6
 
 modules-left = i3
 modules-center =
-modules-right = weather date xbacklight pulseaudio wireguard bluetooth
+modules-right = weather popup-calendar xbacklight pulseaudio wireguard bluetooth
 tray-position = none
 tray-padding = 2
 ; tray-background = #0063ff
@@ -114,6 +114,12 @@ exec = ~/.config/polybar/countdown.sh
 label-foreground = ${colors.alert}
 interval = 20
 label = "%output%"
+
+[module/popup-calendar]
+type = custom/script
+exec = ~/.config/polybar/popup-calendar.sh
+interval = 5
+click-left = ~/.config/polybar/popup-calendar.sh --popup &
 
 [module/applauncher]
 type = custom/text
@@ -328,6 +334,7 @@ label-disconnected-foreground = ${colors.foreground-alt}
 [module/date]
 type = internal/date
 interval = 5
+click-left = ~/.config/polybar/popup-calendar.sh --popup &
 
 date = " %a, %d %b"
 date-alt = " %Y-%m-%d"
@@ -547,5 +554,5 @@ margin-bottom = 5
 
 [bar/DVI]
 inherit = bar/mybar
-monitor = DVI-D-0
+monitor = DVI-D-1
 tray-position = right
