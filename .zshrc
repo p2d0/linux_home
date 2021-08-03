@@ -190,7 +190,7 @@ git_update(){
 sync_repo(){
     cd $1;
     git_update;
-    git submodule foreach "git add .;git commit -m "update $(date)";git push origin master;";
+    git submodule foreach "git add .;git commit -m 'update $(date)';git push origin master;";
 }
 
 sync_repos(){
