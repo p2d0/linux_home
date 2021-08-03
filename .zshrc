@@ -195,7 +195,7 @@ sync_repos(){
     git_update;
     cd $HOME/.doom.d/
     git_update;
-    git submodule foreach git_update;
+    git submodule foreach "zsh -c git_update";
 }
 
 alias wg-start="sudo wg-quick up wgcf-profile.conf"
