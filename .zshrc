@@ -181,7 +181,7 @@ peco_select_history() {
     zle -R -c
 }
 
-export git_update(){
+git_update(){
     git add .;
     git commit -m "update";
     git push origin master;
