@@ -181,13 +181,13 @@ peco_select_history() {
     zle -R -c
 }
 
+export git_update(){
+    git add .;
+    git commit -m "update";
+    git push origin master;
+}
 
 sync_repos(){
-    git_update(){
-        git add .;
-        git commit -m "update";
-        git push origin master;
-    }
     cd $HOME;
     git_update;
     git submodule foreach git_update;
