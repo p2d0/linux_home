@@ -193,6 +193,10 @@ sync_repo(){
     git submodule foreach "git add .;git commit -m 'update $(date "+%H:%M %a, %d %b")';git push origin master;";
 }
 
+system_install(){
+    $HOME/install_system.sh $1
+}
+
 sync_repos(){
     sync_repo $HOME;
     sync_repo $HOME/org;

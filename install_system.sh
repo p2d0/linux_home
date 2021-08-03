@@ -14,7 +14,7 @@ home_dir=/home/$USER
 install_packages(){
     yay -Sy dmenu rofi rofi-calc spotify-adblock-git telegram-desktop ttf-font-awesome feh redshift emacs  \
         i3lock zramd guake gnome-terminal paprefs pavucontrol yad openresolv nautilus gnome-disk-utility polkit-gnome flameshot pasystray pulseaudio \
-        peco-bin \
+        peco-bin cronie \
         polybar \
         bluez-utils pulseaudio-bluetooth breeze breeze-gtk panther-launcher-git fcitx fcitx-mozc fcitx-qt5 \
         i3-gaps lightdm-webkit2-greeter lightdm-webkit2-theme-glorious dunst python-pywal i3lock-color \
