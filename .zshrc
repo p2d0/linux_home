@@ -195,9 +195,7 @@ sync_repos(){
     git_update;
     cd $HOME/.doom.d/
     git_update;
-    git submodule foreach "git add .;git commit -m "update";git push origin master;"
-
-;
+    git submodule foreach "git add .;git commit -m "update";git push origin master;";
 }
 
 alias wg-start="sudo wg-quick up wgcf-profile.conf"
