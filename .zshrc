@@ -183,14 +183,14 @@ peco_select_history() {
 
 git_update(){
     git add .;
-    git commit -m "update $(date)";
+    git commit -m "update $(date "+%H:%M %a, %d %b")";
     git push origin master;
 }
 
 sync_repo(){
     cd $1;
     git_update;
-    git submodule foreach "git add .;git commit -m 'update $(date)';git push origin master;";
+    git submodule foreach "git add .;git commit -m 'update $(date "+%H:%M %a, %d %b")';git push origin master;";
 }
 
 sync_repos(){
