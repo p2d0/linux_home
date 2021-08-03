@@ -181,6 +181,23 @@ peco_select_history() {
     zle -R -c
 }
 
+git_update(){
+    git add .;
+    git commit -m "update";
+    git push origin master;
+}
+
+sync_repos(){
+    cd $HOME;
+    git_update;
+    git submodule foreach git_update;
+    cd org;
+    git_update;
+    cd $HOME/.doom.d/
+    git_update;
+    git submodule foreach git_update;
+}
+
 alias wg-start="sudo wg-quick up wgcf-profile.conf"
 alias wg-stop="sudo wg-quick down wgcf-profile.conf"
 
