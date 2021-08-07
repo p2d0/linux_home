@@ -63,6 +63,13 @@ install_doom_emacs(){
     fi
 }
 
+install_org(){
+    if [ ! -d "$home_dir/.doom.d" ]
+    then
+        git clone https://Patriot720@bitbucket.org/Patriot720/org.git
+    fi
+}
+
 docker_setup(){
     sudo systemctl enable docker.service
     sudo systemctl start docker.service
@@ -138,6 +145,10 @@ install_shure_font(){
     fc-cache
 }
 
+enable_services(){
+    sudo systemctl enable cronie.service
+}
+
 
 case $1 in
     "-h" | "help" | "")
@@ -177,5 +188,6 @@ case $1 in
         enable_lightdm_service
         configure_git_credentials
         install_shure_font
+        enable_services
         ;;
 esac
