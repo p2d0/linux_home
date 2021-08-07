@@ -203,8 +203,9 @@ sync_repos(){
     sync_repo $HOME/.doom.d;
 }
 
-alias wg-start="sudo wg-quick up wgcf-profile.conf"
-alias wg-stop="sudo wg-quick down wgcf-profile.conf"
+alias wg-generate="cd $HOME;wgcf register --accept-tos; wgcf generate;"
+alias wg-start="cd $HOME;sudo wg-quick up wgcf-profile.conf"
+alias wg-stop="cd $HOME;sudo wg-quick down wgcf-profile.conf"
 
 zle -N peco_select_history
 bindkey '^R' peco_select_history
