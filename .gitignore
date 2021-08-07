@@ -11,9 +11,9 @@
 !.config/gtk-3.0
 !.config/albert
 .config/albert/*.db
-!.config/fcitx
-.config/fcitx/*
-!.config/fcitx/config
+!.config/fcitx5
+.config/fcitx5/*
+!.config/fcitx5/config
 !.profile
 !.config/dunst
 !.config/GIMP/
