@@ -3,8 +3,8 @@ const resolve = require('path').resolve;
 
 function searchForSln(path, depth = 0) {
   if (depth >= 10)
-    return false;
-  const files = fs.readdirSync(path)
+return false;
+const files = fs.readdirSync(path)
   const resultFilename = files.find(file => {
     let filename = file.split('\\');
     filename = filename[filename.length - 1]
