@@ -5,4 +5,4 @@ Description=kde_connect
 ExecStart=/usr/lib/kdeconnectd
 
 [Install]
-WantedBy=default.target
+WantedBy=graphical-session.target

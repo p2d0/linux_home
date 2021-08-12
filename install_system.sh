@@ -20,7 +20,7 @@ install_packages(){
         i3-gaps lightdm-webkit2-greeter lightdm-webkit2-theme-glorious dunst python-pywal i3lock-color \
         qt5ct qbittorrent wgcf wireguard-tools lxappearance gimp discord docker docker-compose ttf-fira-code \
         ttf-weather-icons gnu-free-fonts ttf-arphic-uming ttf-baekmuk \
-        ttf-nerd-fonts-symbols-mono xorg-server brave adobe-source-han-sans-jp-fonts adobe-source-han-serif-jp-fonts \
+        ttf-nerd-fonts-symbols-mono kdeconnect xorg-server brave adobe-source-han-sans-jp-fonts adobe-source-han-serif-jp-fonts \
         ttf-hanazono otf-ipafont \
         xorg-xinput noto-fonts ntfs-3g openssh fcitx5-configtool
 }

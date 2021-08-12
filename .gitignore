@@ -43,3 +43,4 @@
 !.local/share/nautilus/scripts/test/*
 !.gnupg/
 !.gnupg/gpg.conf
+!.config/systemd/user/kde_connect.service
