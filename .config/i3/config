@@ -265,6 +265,10 @@ bindsym $mod+r mode "resize"
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 exec pasystray
+#Dropbox
+exec --no-startup-id ~/.dropbox-dist/dropboxd
+#KDEConnect
+exec --no-startup-id /usr/lib/kdeconnectd
 
 #Bg
 # exec_always feh --bg-fill ~/.config/i3/bg/soheb-zaidi.png
@@ -303,6 +307,9 @@ exec_always --no-startup-id fcitx -d
 # exec --no-startup-id polybar -r DVI
 # exec --no-startup-id polybar -r mybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
+
+#Sync repos
+exec_always --no-startup-id /usr/bin/zsh -c "source $HOME/.zshrc;sync_repos;"
 
 # switch to workspace with urgent window automatically
 # for_window [urgent=latest] focus
