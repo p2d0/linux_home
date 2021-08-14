@@ -199,29 +199,7 @@ system_install(){
 
 sync_repos(){
     sync_repo $HOME;
-    sync_repo $HOME/org;
     sync_repo $HOME/.doom.d;
-}
-
-new_systemd_user_service(){
-    if [ -n "$1" ]; then
-        name=$1.service
-        cd ~/.config/systemd/user/
-        touch $name;
-        cat > $name <<EOF
-[Unit]
-Description=$1
-
-[Service]
-ExecStart=
-
-[Install]
-WantedBy=default.target
-EOF
-        vim $name;
-    else
-        echo "Input service name"
-    fi
 }
 
 alias wg-generate="cd $HOME;wgcf register --accept-tos; wgcf generate;"
