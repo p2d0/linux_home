@@ -21,7 +21,7 @@ install_packages(){
         qt5ct qbittorrent wgcf wireguard-tools lxappearance gimp discord docker docker-compose ttf-fira-code \
         ttf-weather-icons ttf-comfortaa gnu-free-fonts ttf-arphic-uming ttf-baekmuk \
         ttf-nerd-fonts-symbols-mono kdeconnect xorg-server brave adobe-source-han-sans-jp-fonts adobe-source-han-serif-jp-fonts \
-        ttf-hanazono otf-ipafont \
+        ttf-hanazono otf-ipafont gucharmap \
         xorg-xinput noto-fonts ntfs-3g openssh fcitx5-configtool
 }
 
