@@ -206,6 +206,10 @@ alias wg-generate="cd $HOME;wgcf register --accept-tos; wgcf generate;"
 alias wg-start="cd $HOME;sudo wg-quick up wgcf-profile.conf"
 alias wg-stop="cd $HOME;sudo wg-quick down wgcf-profile.conf"
 
+alias fddir="fd -t d "
+alias fdidir="fd -"
+alias fdi="fd -I"
+
 zle -N peco_select_history
 bindkey '^R' peco_select_history
 
