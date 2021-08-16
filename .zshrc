@@ -200,6 +200,7 @@ system_install(){
 sync_repos(){
     sync_repo $HOME;
     sync_repo $HOME/.doom.d;
+    sync_repo $HOME/.dump;
 }
 
 alias wg-generate="cd $HOME;wgcf register --accept-tos; wgcf generate;"
