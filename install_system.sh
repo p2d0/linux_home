@@ -13,7 +13,7 @@ home_dir=/home/$USER
 
 install_packages(){
     yay -Sy dmenu rofi rofi-calc spotify-adblock-git telegram-desktop ttf-font-awesome feh redshift emacs  \
-        i3lock zramd guake gnome-terminal paprefs pavucontrol yad openresolv nautilus gnome-disk-utility polkit-gnome flameshot pasystray pulseaudio \
+        i3lock zramd guake npm gnome-terminal paprefs pavucontrol yad openresolv nautilus gnome-disk-utility polkit-gnome flameshot pasystray pulseaudio \
         peco-bin cronie \
         polybar \
         bluez-utils pulseaudio-bluetooth breeze breeze-gtk panther-launcher-git fcitx5 fcitx5-mozc fcitx5-gtk \
@@ -143,6 +143,11 @@ install_shure_font(){
     wget -O shure_mono.ttf https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/ShareTechMono/complete/Shure%20Tech%20Mono%20Nerd%20Font%20Complete.ttf?raw=true
     mv shure_mono.ttf $home_dir/.local/share/fonts/
     fc-cache
+}
+
+install_hygen(){
+    npm i -g hygen
+    git clone https://github.com/Patriot720/my-hygen-templates.git
 }
 
 enable_services(){

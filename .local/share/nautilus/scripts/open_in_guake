@@ -15,5 +15,4 @@ else
      dir="$base/$1"
 fi
 
-#there should be an embracing around the $dir
 guake --show -n --rename-tab $dir --execute-command="cd '$dir'"

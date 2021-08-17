@@ -203,6 +203,8 @@ sync_repos(){
     sync_repo $HOME/.dump;
 }
 
+alias hg="HYGEN_TMPLS=~/my-hygen-templates/_templates/hygen hygen"
+
 alias wg-generate="cd $HOME;wgcf register --accept-tos; wgcf generate;"
 alias wg-start="cd $HOME;sudo wg-quick up wgcf-profile.conf"
 alias wg-stop="cd $HOME;sudo wg-quick down wgcf-profile.conf"
