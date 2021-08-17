@@ -16,4 +16,4 @@ else
 fi
 
 #there should be an embracing around the $dir
-guake --show -n --execute-command="cd '$dir'"
+guake --show -n --rename-tab $dir --execute-command="cd '$dir'"
