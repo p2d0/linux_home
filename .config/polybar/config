@@ -78,7 +78,7 @@ font-5 = Weather Icons:size=12;5
 font-6 = MaterialIcons:size=15;6
 
 modules-left = i3
-modules-center =
+modules-center = work-rest-switch
 modules-right =  weather  popup-calendar xbacklight pulseaudio wireguard bluetooth
 tray-position = none
 tray-padding = 2
@@ -121,6 +121,12 @@ exec = ~/.config/polybar/popup-calendar.sh
 interval = 5
 click-left = ~/.config/polybar/popup-calendar.sh --popup &
 
+[module/work-rest-switch]
+type = custom/script
+exec = ~/.config/polybar/work-rest-switch.sh
+label = %output%
+interval = 1
+click-left = ~/.config/polybar/work-rest-switch.sh --toggle &
 
 [module/applauncher]
 type = custom/text
@@ -139,6 +145,7 @@ content-suffix = " "
 content-padding = 1
 content-background = ${colors.foreground}
 content-foreground = #000
+
 
 [module/text]
 type = custom/text
