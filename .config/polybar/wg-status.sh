@@ -22,8 +22,13 @@ show_status(){
 
 wg-toggle(){
     if is_off; then
-        wg-generate
         wg-start
+        if ping google.com; then
+        else
+            wg-stop;
+            wg-generate;
+            wg-start;
+        fi
     else
         wg-stop
     fi
