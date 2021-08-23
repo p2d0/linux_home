@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 is_off(){
     status=$(wg show 2>&1);
@@ -18,12 +18,10 @@ show_status(){
 
 wg-toggle(){
     if is_off; then
-        rm ~/.config/polybar/wgcf-account.toml
-        wgcf register --accept-tos
-        wgcf generate
-        sudo wg-quick up ~/.config/polybar/wgcf-profile.conf
+        wg-generate
+        wg-start
     else
-        sudo wg-quick down ~/.config/polybar/wgcf-profile.conf
+        wg-stop
     fi
 }
 
