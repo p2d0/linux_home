@@ -1,8 +1,12 @@
 #!/usr/bin/env zsh
+# requires wg-quick to be in sudoers file
+alias wg-generate="cd $HOME;wgcf register --accept-tos; wgcf generate;"
+alias wg-start="cd $HOME;sudo wg-quick up wgcf-profile.conf"
+alias wg-stop="cd $HOME;sudo wg-quick down wgcf-profile.conf"
 
 is_off(){
-    status=$(wg show 2>&1);
-    if [ -z  "$status" ]; then
+    wg_status=$(wg show 2>&1);
+    if [ -z  "$wg_status" ]; then
         return 0;
     fi
     return 1;
