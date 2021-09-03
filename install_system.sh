@@ -154,6 +154,10 @@ enable_services(){
     sudo systemctl enable cronie.service
 }
 
+add_git_aliases(){
+    git config --global alias.coa '!git add -A && git commit -m'
+}
+
 
 case $1 in
     "-h" | "help" | "")
@@ -194,5 +198,6 @@ case $1 in
         configure_git_credentials
         install_shure_font
         enable_services
+        add_git_aliases
         ;;
 esac

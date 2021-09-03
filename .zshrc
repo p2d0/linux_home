@@ -138,6 +138,7 @@ fp () {
 clip-file(){
     fp $1 | xclip -selection clipboard -t text/uri-list
 }
+
 clip-files(){
     files=("${(@f)$(fd -aI $1)}")
     arr=();

@@ -44,3 +44,4 @@
 !.gnupg/
 !.gnupg/gpg.conf
 !.config/systemd/user/kde_connect.service
+.config/systemd/user/favaga_bot.service

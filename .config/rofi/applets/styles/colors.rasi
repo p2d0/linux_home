@@ -19,4 +19,4 @@
  *
  */
 
-@import "arc-dark.rasi"
+@import "dark.rasi"
