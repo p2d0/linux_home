@@ -222,6 +222,12 @@ export CCACHE_EXEC=/usr/bin/ccache
 export CCACHE_DIR=/mnt/Home/ccache
 export ANDROID_JACK_VM_ARGS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4G"
 
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
 if [ -d "/opt/atlassian/plugin-sdk/bin" ] ; then
     PATH="/opt/atlassian/plugin-sdk/bin:$PATH"
 fi
