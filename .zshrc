@@ -213,6 +213,7 @@ alias wg-stop="cd $HOME;sudo wg-quick down wgcf-profile.conf"
 alias fddir="fd -t d "
 alias fdidir="fd -"
 alias fdi="fd -I"
+alias rm="trash"
 
 zle -N peco_select_history
 bindkey '^R' peco_select_history
@@ -237,8 +238,6 @@ if [ -d "/opt/toolchains/arm-eabi-4.6/bin" ] ; then
 fi
 
 PATH="/home/andrew/.local/share/gem/ruby/2.7.0/bin:$PATH"
-
-alias python=python2
 
 export PATH="$PATH:/home/$USER/.dotnet/tools"
 export PATH="$PATH:/home/$USER/.emacs.d/bin"

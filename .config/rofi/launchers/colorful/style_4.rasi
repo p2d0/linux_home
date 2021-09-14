@@ -26,11 +26,12 @@ window {
 	border:							0px;
 	border-color:					@ac;
     border-radius:                  0px;
-	height:							100%;
-	width:							19%;
-    location:                       east;
-    x-offset:                       0;
-    y-offset:                       0;
+	height:							450px;
+	width:							450px;
+    location:                       southeast;
+    x-offset:                       -15px;
+    y-offset:                       -25px;
+
 }
 
 prompt {
@@ -67,7 +68,7 @@ inputbar {
 listview {
     background-color:               @al;
     padding:                        10px 10px 0px 10px;
-    columns:                        3;
+    columns:                        1;
     spacing:                        0%;
     cycle:                          false;
     dynamic:                        true;
@@ -89,25 +90,27 @@ element {
     text-color:                     @fg;
     orientation:                    vertical;
     border-radius:                  0%;
-    padding:                        2% 0% 2% 0%;
+    padding: 0 0 20 0;
+    // padding:                        2% 0% 2% 0%;
 }
 
-element-icon {
-    background-color: 				inherit;
-    text-color:       				inherit;
-    horizontal-align:               0.5;
-    vertical-align:                 0.5;
-    size:                           48px;
-    border:                         0px;
-}
+// element-icon {
+//     display: none;
+//     background-color: 				inherit;
+//     text-color:       				inherit;
+//     horizontal-align:               0.5;
+//     vertical-align:                 0.5;
+//     size:                           48px;
+//     border:                         0px;
+// }
 
-element-text {
+element-text,element-icon {
     background-color: 				@al;
     text-color:       				inherit;
     expand:                         true;
     horizontal-align:               0.5;
     vertical-align:                 0.5;
-    margin:                         0.5% 0.5% -0.5% 0.5%;
+    // margin:                         0.5% 0.5% -0.5% 0.5%;
 }
 
 element selected {

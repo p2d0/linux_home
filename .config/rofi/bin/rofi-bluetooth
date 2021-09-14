@@ -298,7 +298,7 @@ show_menu() {
     esac
 }
 
-theme="style_2"
+theme="style_4"
 dir="$HOME/.config/rofi/launchers/colorful"
 
 # Rofi command to pipe into, can add any options here

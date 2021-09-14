@@ -79,7 +79,7 @@ font-6 = MaterialIcons:size=15;6
 
 modules-left = i3
 modules-center = work-rest-switch
-modules-right =  weather  popup-calendar xbacklight pulseaudio wireguard bluetooth
+modules-right =  weather  popup-calendar xbacklight pulseaudio wireguard bluetooth powerapplet
 tray-position = none
 tray-padding = 2
 ; tray-background = #0063ff
@@ -145,6 +145,16 @@ content-suffix = " "
 content-padding = 1
 content-background = ${colors.foreground}
 content-foreground = #000
+
+[module/powerapplet]
+type = custom/text
+
+content = ""
+content-suffix = " "
+click-left = ~/.config/rofi/applets/applets/powermenu.sh
+; content-margin = 0
+; content-background = ${colors.foreground}
+; content-foreground = #000
 
 
 [module/text]
@@ -502,6 +512,7 @@ ramp-1 = 
 ramp-2 = 
 ramp-foreground = ${colors.foreground-alt}
 
+
 [module/powermenu]
 type = custom/menu
 
@@ -537,7 +548,8 @@ menu-2-1-exec = menu-open-0
 type = custom/script
 exec = ~/.config/polybar/system-bluetooth-bluetoothctl.sh
 tail = true
-click-left = ~/.config/polybar/system-bluetooth-bluetoothctl.sh --toggle &
+click-left = ~/.config/rofi/bin/rofi-bluetooth
+; click-left = ~/.config/polybar/system-bluetooth-bluetoothctl.sh --toggle &
 
 [module/weather]
 type = custom/script

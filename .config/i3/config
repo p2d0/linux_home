@@ -106,9 +106,9 @@ bindsym $mod+x kill
 floating_modifier $mod
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec ~/.config/rofi/launchers/colorful/launcher.sh
-bindsym $mod+b exec ~/.config/rofi/bin/rofi-bluetooth
-bindsym $mod+c exec ~/.config/rofi/launchers/text/calc.sh
+bindsym $mod+d exec --no-startup-id ~/.config/rofi/launchers/colorful/launcher.sh
+bindsym $mod+b exec --no-startup-id ~/.config/rofi/bin/rofi-bluetooth
+bindsym $mod+c exec --no-startup-id ~/.config/rofi/launchers/text/calc.sh
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
