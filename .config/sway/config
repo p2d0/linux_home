@@ -238,7 +238,7 @@ exec env LD_PRELOAD=/usr/lib/spotify-adblock.so spotify %U
 exec --no-startup-id dunst
 exec_always --no-startup-id fcitx5 -d
 exec_always --no-startup-id /usr/bin/zsh -c "source $HOME/.zshrc;sync_repos;"
-exec_once --no-startup-id waybar
+exec --no-startup-id waybar
 
 
 include /etc/sway/config.d/*
