@@ -225,6 +225,7 @@ export ANDROID_JACK_VM_ARGS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4G
 export XKB_DEFAULT_LAYOUT=us,ru
 export XKB_DEFAULT_OPTIONS=grp:alt_shift_toggle
 
+
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
