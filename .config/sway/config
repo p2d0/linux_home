@@ -1,5 +1,9 @@
 set $mod Mod4
 
+gaps inner 45
+gaps horizontal 0
+gaps vertical 0
+
 default_border pixel 5
 default_floating_border normal
 
