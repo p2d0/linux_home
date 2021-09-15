@@ -293,7 +293,6 @@ exec --no-startup-id xinput --set-prop 9 'libinput Accel Profile Enabled' 0, 1
 exec --no-startup-id xinput --set-prop 11 'libinput Accel Profile Enabled' 0, 1
 #Other
 exec env LD_PRELOAD=/usr/lib/spotify-adblock.so spotify %U
-exec_once telegram
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
