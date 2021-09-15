@@ -9,7 +9,7 @@ hide_edge_borders both
 for_window [instance="gnome-[^t].+"] floating enable
 for_window [app_id="guake"] floating enable
 for_window [app_id="guake"] move position 0 0
-for_window [app_id="guake"] floating_maximum_size -1 x -1
+for_window [app_id="guake"] floating_maximum_size -1 x 1080
 for_window [class="Panther_launcher"] floating enable
 for_window [class="Panther_launcher"] resize set 1000 500
 for_window [class="Panther_launcher"] move position mouse
