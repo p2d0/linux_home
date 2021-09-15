@@ -27,10 +27,6 @@ for_window [app_id="pavucontrol"] move position mouse
 for_window [app_id="pavucontrol"] move up 30
 for_window [class="Yad" title="yad-calendar"] floating enable
 
-assign [class="TelegramDesktop"] $ws10
-assign [class="discord"] $ws8
-assign [class="whatsapp-nativefier-d40211"] $ws8
-assign [class="qBittorrent"] $ws8
 
 font pango:DejaVu Sans Mono 8
 
@@ -104,6 +100,11 @@ set $ws7 7: 
 set $ws8 8: 
 set $ws9 9: 
 set $ws10 10:  
+
+assign [app_id="telegramdesktop"] $ws10
+assign [class="discord"] $ws8
+assign [class="whatsapp-nativefier-d40211"] $ws8
+assign [class="qBittorrent"] $ws8
 
 set $monitor_1 DP-1
 set $monitor_2 DVI-D-1
@@ -216,6 +217,7 @@ exec --no-startup-id ~/.dropbox-dist/dropboxd
 exec --no-startup-id /usr/lib/kdeconnectd
 
 exec_always  guake
+exec_always import-gsettings
 
 exec --no-startup-id setxkbmap us,ru -option 'grp:alt_shift_toggle'
 
@@ -243,6 +245,7 @@ input type:keyboard {
 }
 
 exec env LD_PRELOAD=/usr/lib/spotify-adblock.so spotify %U
+exec telegram-desktop
 
 exec_always --no-startup-id mako
 exec_always --no-startup-id fcitx5 -d
