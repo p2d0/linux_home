@@ -5,6 +5,7 @@
 !.config/**
 .config/*
 !.config/i3
+!.config/sway
 !.config/picom
 !.zshrc
 !.config/qt5ct
