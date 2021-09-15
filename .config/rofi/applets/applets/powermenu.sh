@@ -48,7 +48,9 @@ case $chosen in
 		systemctl reboot
         ;;
     $lock)
-		if [[ -f /usr/bin/i3lock ]]; then
+		if [[ -f /usr/bin/swaylock ]]; then
+            swaylock
+		elif [[ -f /usr/bin/i3lock ]]; then
 			i3lock
 		elif [[ -f /usr/bin/betterlockscreen ]]; then
 			betterlockscreen -l
@@ -60,6 +62,8 @@ case $chosen in
 		systemctl suspend
         ;;
     $logout)
+		if [[ "$DESKTOP_SESSION" == "Sway" ]]; then
+            swaymsg exit
 		if [[ "$DESKTOP_SESSION" == "Openbox" ]]; then
 			openbox --exit
 		elif [[ "$DESKTOP_SESSION" == "bspwm" ]]; then
