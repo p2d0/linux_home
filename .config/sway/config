@@ -8,6 +8,7 @@ hide_edge_borders both
 for_window [class="Spotify"] move to workspace $ws10
 for_window [instance="gnome-[^t].+"] floating enable
 for_window [app_id="guake"] floating enable
+for_window [app_id="yakuake"] floating enable
 for_window [app_id="guake"] move position 0 0
 # for_window [app_id="guake"] floating_maximum_size 100% x 100%
 for_window [class="Panther_launcher"] floating enable
@@ -76,7 +77,7 @@ bindsym $mod+semicolon split h
 bindsym $mod+v split v
 
 bindsym $mod+f fullscreen toggle
-bindsym F12 exec /usr/bin/guake-toggle
+# bindsym F12 exec /usr/bin/guake-toggle
 
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
