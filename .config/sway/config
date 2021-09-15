@@ -24,7 +24,7 @@ for_window [class="Anki"] floating enable
 for_window [app_id="pavucontrol"] floating enable
 for_window [app_id="pavucontrol"] resize set 500 400
 for_window [app_id="pavucontrol"] move position mouse
-for_window [app_id="pavucontrol"] move up 20
+for_window [app_id="pavucontrol"] move up 30
 for_window [class="Yad" title="yad-calendar"] floating enable
 
 assign [class="TelegramDesktop"] $ws10
