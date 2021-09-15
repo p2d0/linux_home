@@ -115,7 +115,8 @@ export VISUAL="emacsclient"
 export EDITOR="$VISUAL"
 
 # | clip
-alias clip="xclip -selection clipboard"
+# alias clip="xclip -selection clipboard"
+alias clip="wl-copy"
 # alias clip-file="xclip -selection clipboard -t text/uri-list"
 
 h265(){
@@ -136,7 +137,7 @@ fp () {
 }
 
 clip-file(){
-    fp $1 | xclip -selection clipboard -t text/uri-list
+    fp $1 | clip -t text/uri-list
 }
 
 clip-files(){
@@ -145,7 +146,7 @@ clip-files(){
     for file in $files; do
         arr+=("file:/$file\n");
     done
-    echo $arr | xclip -i -selection clipboard -t text/uri-list
+    echo $arr | wl-copy clipboard -t text/uri-list
 }
 
 vapi(){
