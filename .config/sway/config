@@ -55,9 +55,9 @@ bindsym $mod+d exec --no-startup-id ~/.config/rofi/launchers/colorful/launcher.s
 bindsym $mod+b exec --no-startup-id ~/.config/rofi/bin/rofi-bluetooth
 bindsym $mod+c exec --no-startup-id ~/.config/rofi/launchers/text/calc.sh
 
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindsym --to-code $mod+j focus down
+bindsym --to-code $mod+k focus up
+bindsym --to-code $mod+l focus right
 bindsym --to-code $mod+h focus left
 
 bindsym $mod+Left focus left
