@@ -219,7 +219,7 @@ exec --no-startup-id /usr/lib/kdeconnectd
 
 exec_always  guake
 exec_always import-gsettings
-exec --no-startup-id redshift-gtk
+exec_always --no-startup-id redshift-gtk
 
 exec --no-startup-id setxkbmap us,ru -option 'grp:alt_shift_toggle'
 
