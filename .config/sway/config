@@ -60,11 +60,6 @@ bindsym $mod+k focus up
 bindsym $mod+l focus right
 bindsym $mod+h focus left
 
-bindsym $mod+о focus down
-bindsym $mod+л focus up
-bindsym $mod+д focus right
-bindsym $mod+р focus left
-
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
