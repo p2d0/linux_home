@@ -58,7 +58,7 @@ bindsym $mod+c exec --no-startup-id ~/.config/rofi/launchers/text/calc.sh
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
-bindsym $mod+h focus left
+bindsym --to-code $mod+h focus left
 
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
