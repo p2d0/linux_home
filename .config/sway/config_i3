@@ -20,6 +20,9 @@
 
 set $mod Mod4
 
+gaps inner 45
+gaps horizontal 0
+gaps vertical 0
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
 default_border pixel 5

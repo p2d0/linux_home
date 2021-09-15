@@ -108,8 +108,9 @@ assign [class="qBittorrent"] $ws8
 
 set $monitor_1 DP-1
 set $monitor_2 DVI-D-1
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+# output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 # output $monitor_1 adaptive_sync on
+exec --no-startup-id variety
 output $monitor_1 scale 1
 output $monitor_1 pos 0 0 mode 2560x1080@60Hz
 output $monitor_2 scale 1
