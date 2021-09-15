@@ -62,9 +62,9 @@ case $chosen in
 		systemctl suspend
         ;;
     $logout)
-		if [[ "$DESKTOP_SESSION" == "Sway" ]]; then
+		if [[ "$DESKTOP_SESSION" == "sway" ]]; then
             swaymsg exit
-		if [[ "$DESKTOP_SESSION" == "Openbox" ]]; then
+		elif [[ "$DESKTOP_SESSION" == "Openbox" ]]; then
 			openbox --exit
 		elif [[ "$DESKTOP_SESSION" == "bspwm" ]]; then
 			bspc quit
